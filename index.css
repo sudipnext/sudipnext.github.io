@@ -1,4 +1,4 @@
-body{
+.centre{
     display: flex;
     flex-direction: row wrap;
     justify-content: center;
