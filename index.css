@@ -1,6 +1,29 @@
-.centre{
+*{
+    margin:0;
+    padding:0;
+    background-color: black;
+}
+
+ul{
+    list-style: none;
+}
+/* navigation bar */
+.navigation-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;    
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+}
+.navbar-links{
     display: flex;
-    flex-direction: row wrap;
-    justify-content: center;
     align-items: center;
+    font-weight: bold;
+
+}
+.navbar-links li{
+    margin: 0 20px;
 }
