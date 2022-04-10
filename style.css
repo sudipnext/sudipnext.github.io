@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Indie+Flower&family=Kanit:wght@300&family=Orbitron&family=Shizuru&display=swap');
+@import "utilities.css";
+:root {
+  --primary: #162447;
+  --secondary: #1f4068;
+  --third: #1f4068;
+  --fourth: #e43f5a;
+}
+body{
+    /* font-family: 'Bebas Neue', cursive; */
+/* font-family: 'Indie Flower', cursive; */
+/* font-family: 'Kanit', sans-serif; */
+font-family: 'Orbitron', sans-serif;
+/* font-family: 'Shizuru', cursive; */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  background: var(--primary);
+}
+.container {
+  max-width: 1152px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.logo{
+    color: white;
+    margin-right: 10rem;
+    font-family: 'Indie Flower', cursive;
+    font-size: x-large;
+}
+header nav .left a {
+  color: white;
+  margin-right: 2rem;
+  text-decoration: none;
+  font-size: small;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in;
+}
+header nav .left a:hover{
+    color: var(--fourth);
+}
+header nav{
+    padding: 2rem;
+    
+}
+.section .left img{
+    width: 400px;
+    margin-left: 35%;
+    border-radius: 500px;
+}
+.section .right{
+    color: white;
+}
+.section .right h6{
+    font-size: 1.6rem;
+}
+.section .right h1{
+    font-size: 4rem;
+    font-weight: 100;
+    line-height: 4rem;
+    margin-bottom: 1rem;
+}
+.section .right h1 span{
+    color: var(--fourth);
+}
