@@ -119,7 +119,7 @@ header nav {
 /* about me section ends here */
 /* skills section  */
 .third {
-  background: var(--third);
+  /* background: var(--third); */
   clip-path: polygon(0% 0%, 75% 0%, 100% 4%, 100% 100%, 0% 100%);
 }
 .wrapper {
