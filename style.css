@@ -20,6 +20,9 @@ font-family: 'Orbitron', sans-serif;
 }
 header {
   background: var(--primary);
+  height: 100vh;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 35% 80%, 0% 100%);
+
 }
 .container {
   max-width: 1152px;
@@ -49,21 +52,40 @@ header nav{
 }
 .section .left img{
     width: 400px;
-    margin-left: 35%;
+    margin-left: 3rem;
     border-radius: 500px;
+    margin-top: 2rem;
 }
 .section .right{
     color: white;
+    margin-top: -5rem;
 }
 .section .right h6{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    text-decoration: underline;
 }
 .section .right h1{
-    font-size: 4rem;
-    font-weight: 100;
-    line-height: 4rem;
+    font-size: 3rem;
+    font-weight: 100%;
+    line-height: 3.3rem;
     margin-bottom: 1rem;
 }
 .section .right h1 span{
     color: var(--fourth);
+}
+
+.about{
+  padding: 3rem 0rem;
+  
+}
+.about .social a img{
+  height: 30px;
+  margin-right: 1rem;
+}
+.about .left img{
+  width: 400px;
+  margin-left: 3rem;
+  border-radius: 500px;
+
+  
 }
