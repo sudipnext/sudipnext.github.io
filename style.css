@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Indie+Flower&family=Kanit:wght@300&family=Orbitron&family=Shizuru&display=swap');
 @import "utilities.css";
+/* color variables maked */
 :root {
   --primary: #162447;
   --secondary: #1f4068;
   --third: #1f4068;
   --fourth: #e43f5a;
 }
+/* A default color for body by google fonts */
 body{
     /* font-family: 'Bebas Neue', cursive; */
 /* font-family: 'Indie Flower', cursive; */
@@ -13,31 +15,36 @@ body{
 font-family: 'Orbitron', sans-serif;
 /* font-family: 'Shizuru', cursive; */
 }
+/* default parameters for the whole website */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/* header section size and color */
 header {
   background: var(--primary);
   height: 100vh;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 35% 80%, 0% 100%);
 
 }
+
 .container {
   max-width: 1152px;
   padding: 0 15px;
   margin: 0 auto;
 }
+/* mylogo */
 .logo{
     color: white;
     margin-right: 10rem;
     font-family: 'Indie Flower', cursive;
     font-size: x-large;
 }
+/* navigation menu starts here */
 header nav .left a {
   color: white;
-  margin-right: 2rem;
+  margin-right: 3rem;
   text-decoration: none;
   font-size: small;
   text-transform: uppercase;
@@ -50,42 +57,48 @@ header nav{
     padding: 2rem;
     
 }
-.section .left img{
-    width: 400px;
-    margin-left: 3rem;
-    border-radius: 500px;
-    margin-top: 2rem;
-}
-.section .right{
-    color: white;
-    margin-top: -5rem;
-}
-.section .right h6{
-    font-size: 1.4rem;
-    text-decoration: underline;
-}
-.section .right h1{
-    font-size: 3rem;
-    font-weight: 100%;
-    line-height: 3.3rem;
-    margin-bottom: 1rem;
-}
-.section .right h1 span{
-    color: var(--fourth);
-}
-
-.about{
+/* navigation ends here */         
+/* common section for names here */
+.common{
   padding: 3rem 0rem;
-  
+  height: 100vh;
 }
+.common .left img{
+  width: 400px;
+  margin-left: 3rem;
+  border-radius: 500px; 
+}
+.common .right{
+  color: white;
+  margin-top: -5rem;
+}
+.common .right h6{
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+.common .right h1{
+  font-size: 3rem;
+  font-weight: 100%;
+  line-height: 3.3rem;
+  margin-bottom: 1rem;
+}
+.common .right h1 span{
+  color: var(--fourth);
+}
+/* About me section starts here */
 .about .social a img{
   height: 30px;
   margin-right: 1rem;
+  margin-top: 1rem;
 }
-.about .left img{
-  width: 400px;
+.about .left1 img{
+  height: 500px;
   margin-left: 3rem;
-  border-radius: 500px;
-
-  
+  border-radius: 500px; 
 }
+.about .right1 h1{
+  font-size: 3rem;
+  font-weight: 100%;
+  line-height: 3.9rem;
+}
+/* about me section ends here */
