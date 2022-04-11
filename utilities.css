@@ -11,19 +11,38 @@
     padding: 0.7rem 2.5rem;
     font-weight: 600;
     font-size: 1rem;
-    border: 2px solid transparent;
+    border: 1px solid red;
+    outline: 1px solid red;
     cursor: pointer;
    
 }
-.btn-primary{
-    background: var(--secondary);
+.btn-secondary{
+    background-color: var(--secondary);
     color: white;
+    font-weight: 400;
     transition: all 0.3 ease;
+    border-radius: 10px;
+    font-size: larger;
+    text-decoration: none;
+}
+.btn-secondary:hover{
+    background-color: var(--fourth);
+    color: white;
+    font-weight: 400;
+    transition: all 0.3 ease;
+    border-radius: 10px;
+    font-size: larger;
+}
+.btn-primary{
+    background: var(--fourth);
+    color: white;
+
 }
 .btn-primary:hover{
-    background: transparent;
-    border-color: var(--secondary);
-    color: var(--fourth);
+    background: var(--secondary);
+    transition: all 0.3 ease;
+
+    
 }
 .flex-1{
     flex: 1;
