@@ -18,6 +18,7 @@ canvas {
   background-color: black;
 }
 body {
+  overflow-x: hidden;
   /* font-family: 'Bebas Neue', cursive; */
   /* font-family: 'Indie Flower', cursive; */
   /* font-family: 'Kanit', sans-serif; */
@@ -101,6 +102,7 @@ header nav {
 }
 /* About me section starts here */
 .about {
+  background-color: var(--secondary);
   clip-path: polygon(0% 0%, 25% 0%, 100% 9%, 100% 91%, 75% 100%, 0% 85%);
 }
 .about .social a img {
@@ -127,7 +129,7 @@ header nav {
 /* about me section ends here */
 /* skills section  */
 .third {
-  /* background: var(--third); */
+  background: var(--third);
   clip-path: polygon(0% 0%, 75% 0%, 100% 4%, 100% 100%, 0% 100%);
 }
 .wrapper {
@@ -246,3 +248,8 @@ h2 {
   }
 }
 /* skills section ends  */
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
