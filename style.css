@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Indie+Flower&family=Kanit:wght@300&family=Orbitron&family=Shizuru&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Indie+Flower&family=Kanit:wght@300&family=Orbitron&family=Shizuru&display=swap");
 @import "utilities.css";
 /* color variables maked */
 :root {
@@ -8,12 +8,20 @@
   --fourth: #e43f5a;
 }
 /* A default color for body by google fonts */
-body{
-    /* font-family: 'Bebas Neue', cursive; */
-/* font-family: 'Indie Flower', cursive; */
-/* font-family: 'Kanit', sans-serif; */
-font-family: 'Orbitron', sans-serif;
-/* font-family: 'Shizuru', cursive; */
+canvas {
+  position: absolute;
+  top: 20;
+  z-index: 0;
+  left: 0;
+  height: 300vh;
+  background-color: black;
+}
+body {
+  /* font-family: 'Bebas Neue', cursive; */
+  /* font-family: 'Indie Flower', cursive; */
+  /* font-family: 'Kanit', sans-serif; */
+  font-family: "Orbitron", sans-serif;
+  /* font-family: 'Shizuru', cursive; */
 }
 /* default parameters for the whole website */
 * {
@@ -25,8 +33,7 @@ font-family: 'Orbitron', sans-serif;
 header {
   background: var(--primary);
   height: 100vh;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 35% 80%, 0% 100%);
-
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 25% 90%, 0% 100%);
 }
 
 .container {
@@ -35,11 +42,11 @@ header {
   margin: 0 auto;
 }
 /* mylogo */
-.logo{
-    color: white;
-    margin-right: 10rem;
-    font-family: 'Indie Flower', cursive;
-    font-size: x-large;
+.logo {
+  color: white;
+  margin-right: 10rem;
+  font-family: "Indie Flower", cursive;
+  font-size: x-large;
 }
 /* navigation menu starts here */
 header nav .left a {
@@ -50,60 +57,72 @@ header nav .left a {
   text-transform: uppercase;
   transition: all 0.3s ease-in;
 }
-header nav .left a:hover{
-    color: var(--fourth);
+header nav .left a:hover {
+  color: var(--fourth);
 }
-header nav{
-    padding: 2rem;
-    
+header nav {
+  padding: 2rem;
 }
-/* navigation ends here */         
+/* navigation ends here */
 /* common section for names here */
-.common{
+.common {
   padding: 3rem 0rem;
   height: 100vh;
 }
-.common .left img{
+.common .left img {
   width: 400px;
   margin-left: 3rem;
-  border-radius: 500px; 
+  border-radius: 500px;
 }
-.common .right{
+.common .right {
   color: white;
   margin-top: -5rem;
 }
-.common .right h6{
+.common .right h6 {
   font-size: 1.4rem;
   text-decoration: underline;
 }
-.common .right h1{
+.common .right h1 {
   font-size: 3rem;
   font-weight: 100%;
   line-height: 3.3rem;
   margin-bottom: 1rem;
 }
-.common .right h1 span{
+.common .right h1 span {
   color: var(--fourth);
 }
 /* About me section starts here */
-.about .social a img{
+.about {
+  clip-path: polygon(0% 0%, 25% 0%, 100% 9%, 100% 91%, 75% 100%, 0% 85%);
+}
+.about .social a img {
   height: 30px;
   margin-right: 1rem;
   margin-top: 1rem;
+  background-color: white;
+  border-radius: 50%;
 }
-.about .left1 img{
+.about .left1 img {
   height: 500px;
   margin-left: 3rem;
-  border-radius: 500px; 
+  border-radius: 500px;
 }
-.about .right1 h1{
+.about .right1 h1 {
+  color: white;
   font-size: 3rem;
   font-weight: 100%;
   line-height: 3.9rem;
 }
+.about .right1 p{
+  color: white;
+}
 /* about me section ends here */
 /* skills section  */
-.wrapper{
+.third {
+  background: var(--third);
+  clip-path: polygon(0% 0%, 75% 0%, 100% 4%, 100% 100%, 0% 100%);
+}
+.wrapper {
   width: 80%;
   min-width: 595px;
   position: relative;
@@ -111,114 +130,111 @@ header nav{
   left: 50%;
   top: 50%;
 }
-.skillbars{
+.skillbars {
   width: 100%;
   padding: 30px 30px 50px;
   background-color: white;
-  border: 2px solid rgba(255,255,255,0.06);
+  border: 2px solid rgba(255, 255, 255, 0.06);
   border-radius: 10px;
-  box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
-} 
-.skillbars *{
+}
+.skillbars * {
   color: black;
   font-weight: 500;
 }
-h2{
+h2 {
   margin-bottom: 50px;
   letter-spacing: 2px;
   text-align: center;
   font-size: 33px;
   font-weight: bold;
 }
-.skills:not(:last-child){
+.skills:not(:last-child) {
   margin-bottom: 30px;
 }
-.details{
-  width: 100%;
-  display: flex;  
+.details {
+  width: 70%;
+  display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
 }
-.bar{
+.bar {
   position: relative;
 
-  border: 2px solid #0d96e0;
+  border: 2px solid var(--third);
 
   border-radius: 20px;
-
 }
-.bar div{
+.bar div {
   position: relative;
   width: 0;
   height: 9px;
   border-radius: 10px;
-  background-color: #0d96e0;
- 
-
+  background-color: var(--primary);
 }
-#html-bar{
+#html-bar {
   animation: html-fill 2s forwards;
 }
-@keyframes html-fill{
-  100%{
-      width: 90%;
+@keyframes html-fill {
+  100% {
+    width: 90%;
   }
 }
-#css-bar{
+#css-bar {
   animation: css-fill 2s forwards;
 }
-@keyframes css-fill{
-  100%{
-      width: 60%;
+@keyframes css-fill {
+  100% {
+    width: 60%;
   }
 }
-#js-bar{
+#js-bar {
   animation: js-fill 2s forwards;
 }
 @keyframes js-fill {
-  100%{
-      width: 50%;
+  100% {
+    width: 50%;
   }
 }
-#nodejs-bar{
+#nodejs-bar {
   animation: nodejs-fill 2s forwards;
 }
-@keyframes nodejs-fill{
-  100%{
-      width: 40%;
+@keyframes nodejs-fill {
+  100% {
+    width: 40%;
   }
-} 
-#svelte-bar{
+}
+#svelte-bar {
   animation: svelte-fill 2s forwards;
 }
-@keyframes svelte-fill{
-  100%{
-      width: 50%;
+@keyframes svelte-fill {
+  100% {
+    width: 50%;
   }
-} 
-#python-bar{
+}
+#python-bar {
   animation: python-fill 2s forwards;
 }
-@keyframes python-fill{
-  100%{
-      width: 60%;
+@keyframes python-fill {
+  100% {
+    width: 60%;
   }
-} 
-#git-bar{
+}
+#git-bar {
   animation: git-fill 2s forwards;
 }
-@keyframes git-fill{
-  100%{
-      width: 60%;
+@keyframes git-fill {
+  100% {
+    width: 60%;
   }
 }
-#sql-bar{
+#sql-bar {
   animation: sql-fill 2s forwards;
 }
-@keyframes sql-fill{
-  100%{
-      width: 50%;
+@keyframes sql-fill {
+  100% {
+    width: 50%;
   }
-}  
+}
 /* skills section ends  */
