@@ -19,19 +19,15 @@
 .btn-secondary{
     background-color: var(--secondary);
     color: white;
-    font-weight: 400;
     transition: all 0.3 ease;
     border-radius: 10px;
-    font-size: larger;
+
     text-decoration: none;
 }
 .btn-secondary:hover{
     background-color: var(--fourth);
     color: white;
-    font-weight: 400;
     transition: all 0.3 ease;
-    border-radius: 10px;
-    font-size: larger;
 }
 .btn-primary{
     background: var(--fourth);

@@ -270,7 +270,7 @@ footer{
   }
   /* navigation menu starts here */
   header nav .left a {
-    margin-left: -7rem;
+    margin-left: -11rem;
     padding-left: 9rem;
     padding-right: 1.5rem;
 
@@ -345,11 +345,10 @@ footer{
   /* button  */
 
 .btn{
+    margin-right: 10rem;
     padding: 0.1rem 0.2rem;
     font-weight: 500;
-    font-size: 1rem;
-    
-   
+    font-size: 1rem;  
 }
 .btn-secondary{
     transition: all 0.3 ease;
