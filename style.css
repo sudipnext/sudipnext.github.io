@@ -1,360 +1,49 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Indie+Flower&family=Kanit:wght@300&family=Orbitron&family=Shizuru&display=swap");
-@import "utilities.css";
-/* color variables maked */
-:root {
-  --primary: #162447;
-  --secondary: #1f4068;
-  --third: #1f4068;
-  --fourth: #e43f5a;
-}
-/* A default color for body by google fonts */
-canvas {
-  position: absolute;
-  top: 20;
-  z-index: 0;
-  left: 0;
-  height: 300vh;
-  width: 99.1vw;
-  background-color: black;
-}
-body {
-  overflow-x: hidden;
-  /* font-family: 'Bebas Neue', cursive; */
-  /* font-family: 'Indie Flower', cursive; */
-  /* font-family: 'Kanit', sans-serif; */
-  font-family: "Orbitron", sans-serif;
-  /* font-family: 'Shizuru', cursive; */
-}
-header nav .right a {
-  text-decoration: none;
-  font-family: "Kanit", sans-serif;
-  font-weight: 500;
-  font-size: 1.2rem;
-  border-radius: 10px;
-}
-/* default parameters for the whole website */
-* {
+*{
   margin: 0;
   padding: 0;
+  list-style: none;
   box-sizing: border-box;
-}
-/* header section size and color */
-header {
-  background: var(--primary);
-  height: 100vh;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 25% 90%, 0% 100%);
-}
-
-.container {
-  max-width: 1152px;
-  padding: 0 15px;
-  margin: 0 auto;
-}
-/* mylogo */
-.logo {
-  color: white;
-  margin-right: 10rem;
-  font-family: "Indie Flower", cursive;
-  font-size: x-large;
-}
-/* navigation menu starts here */
-header nav .left a {
-  color: white;
-  margin-right: 3rem;
   text-decoration: none;
-  font-size: small;
-  text-transform: uppercase;
-  transition: all 0.3s ease-in;
+  color:white;
 }
-header nav .left a:hover {
-  color: var(--fourth);
-}
-header nav {
-  padding: 2rem;
-}
-/* navigation ends here */
-/* common section for names here */
-.common {
-  padding: 3rem 0rem;
+body{
   height: 100vh;
+  background: linear-gradient(black, red);
 }
-.common .left img {
-  width: 400px;
-  margin-left: 3rem;
-  border-radius: 500px;
-}
-.common .right {
-  color: white;
-  margin-top: -5rem;
-}
-.common .right h6 {
-  font-size: 1.4rem;
-  text-decoration: underline;
-}
-.common .right h1 {
-  font-size: 3rem;
-  font-weight: 100%;
-  line-height: 1.3;
-  margin-bottom: 2rem;
-}
-.common .right h1 span {
-  color: var(--fourth);
-}
-/* About me section starts here */
-.about {
-  background-color: var(--secondary);
-  clip-path: polygon(0% 0%, 25% 0%, 100% 9%, 100% 91%, 75% 100%, 0% 85%);
-}
-.about .social a img {
-  height: 30px;
-  margin-right: 1rem;
-  margin-top: 1rem;
-  background-color: white;
-  border-radius: 50%;
-}
-.about .left1 img {
-  height: 500px;
-  margin-left: 3rem;
-  border-radius: 500px;
-}
-.about .right1 h1 {
-  color: white;
-  font-size: 3rem;
-  font-weight: 100%;
-  line-height: 3.9rem;
-}
-.about .right1 p {
-  color: white;
-}
-/* about me section ends here */
-/* skills section  */
-.third {
-  background: var(--third);
-  clip-path: polygon(0% 0%, 75% 0%, 100% 4%, 100% 100%, 0% 100%);
-}
-.wrapper {
-  width: 80%;
-  min-width: 595px;
-  position: relative;
-  transform: translate(-50%, 15%);
-  left: 50%;
-  top: 50%;
-}
-.skillbars {
-  width: 100%;
-  padding: 30px 30px 50px;
-  background-color: white;
-  border: 2px solid rgba(255, 255, 255, 0.06);
-  border-radius: 10px;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-}
-.skillbars * {
-  color: black;
-  font-weight: 500;
-}
-h2 {
-  margin-bottom: 50px;
-  letter-spacing: 2px;
-  text-align: center;
-  font-size: 33px;
-  font-weight: bold;
-}
-.skills:not(:last-child) {
-  margin-bottom: 30px;
-}
-.details {
-  width: 70%;
+.nav-items{
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-.bar {
-  position: relative;
-
-  border: 2px solid var(--third);
-
-  border-radius: 20px;
-}
-.bar div {
-  position: relative;
-  width: 0;
-  height: 9px;
-  border-radius: 10px;
-  background-color: var(--primary);
-}
-#html-bar {
-  animation: html-fill 2s forwards;
-}
-@keyframes html-fill {
-  100% {
-    width: 90%;
-  }
-}
-#css-bar {
-  animation: css-fill 2s forwards;
-}
-@keyframes css-fill {
-  100% {
-    width: 60%;
-  }
-}
-#js-bar {
-  animation: js-fill 2s forwards;
-}
-@keyframes js-fill {
-  100% {
-    width: 50%;
-  }
-}
-#nodejs-bar {
-  animation: nodejs-fill 2s forwards;
-}
-@keyframes nodejs-fill {
-  100% {
-    width: 40%;
-  }
-}
-#svelte-bar {
-  animation: svelte-fill 2s forwards;
-}
-@keyframes svelte-fill {
-  100% {
-    width: 50%;
-  }
-}
-#python-bar {
-  animation: python-fill 2s forwards;
-}
-@keyframes python-fill {
-  100% {
-    width: 60%;
-  }
-}
-#git-bar {
-  animation: git-fill 2s forwards;
-}
-@keyframes git-fill {
-  100% {
-    width: 60%;
-  }
-}
-#sql-bar {
-  animation: sql-fill 2s forwards;
-}
-@keyframes sql-fill {
-  100% {
-    width: 50%;
-  }
-}
-/* skills section ends  */
-footer{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-/* @media only screen and (max-width: 1080px){
-
-} */
-@media only screen and (max-width: 840px) {
-  /* new  */
-  /* default parameters for the whole website */
-  /* header section size and color */  
+  justify-content: flex-end;
+  border: 1px solid red;
+  padding: 8px;
   
-  /* mylogo */
-  .logo {
-    color: white;
-    margin-right: 4rem;
-    font-family: "Indie Flower", cursive;
-    font-size: x-large;
-  }
-  /* navigation menu starts here */
-  header nav .left a {
-    margin-left: -11rem;
-    padding-left: 9rem;
-    padding-right: 1.5rem;
-
-    color: white;
-    margin-right: 0.6rem;
-  }
-  header nav {
-    padding: 0.6rem;
-  }
-  /* end  */
-  /* common section for names here */
-  .common {
-    padding: 5rem 0rem;
-    height: 100vh;
-  }
-  .common .left img {
-    width: 200px;
-    margin-left: 0rem;
-    border-radius: 500px;
-  }
-  .common .right {
-    color: white;
-    margin-top: -5rem;
-  }
-  .common .right h6 {
-    font-size: 1rem;
-  }
-  .common .right h1 {
-    font-size: 1rem;
-    font-weight: 100%;
-    line-height: 1.3;
-    margin-bottom: 1rem;
-  }
-  /* About me section starts here */
-  .about .social a img {
-    height: 20px;
-    margin-right: 1rem;
-    margin-top: 1rem;
-    background-color: white;
-    border-radius: 50%;
-  }
-  .about .left1 img {
-    height: 250px;
-    margin-left: 0rem;
-    border-radius: 500px;
-  }
-  .about .right1 h1 {
-    color: white;
-    font-size: 3rem;
-    font-weight: 100%;
-    line-height: 3.9rem;
-  }
-  .about .right1 p {
-    color: white;
-  }
-  /* about me section ends here */
-  /* skills section  */
-   .wrapper {
-    min-width: 240px;
-    position: relative;
-    transform: translate(-50%, 15%);
-    left: 50%;
-    top: 50%;
-  }
- 
-  /* skills section ends  */
-  footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  /* button  */
-
-.btn{
-    margin-right: 10rem;
-    padding: 0.1rem 0.2rem;
-    font-weight: 500;
-    font-size: 1rem;  
 }
-.btn-secondary{
-    transition: all 0.3 ease;
-    font-size: xx-small;
-    text-decoration: none
-  }
-
-
+li{
+  margin-left: 20px;
+}
+li:hover{
+  font-size: larger;
+  background-color: red;
+  
+}
+.item-1{
+  margin-right: auto;
+  font-weight: bolder;
+}
+.profile-img{
+  width: 200px;
+  border-radius: 400px;
+}
+.hero{
+  display: flex;
+  border: 2px solid red;
+  justify-content: flex-end;
+  padding: 20px;
+}
+.info{
+  margin-top: 80px;
+  text-shadow: 1px 1px 1px black;
+  margin-right: auto;
+}
+.nerd{
+  color: rgb(63, 153, 51);
 }
