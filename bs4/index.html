@@ -1,45 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cacao Ratings Dataset</title>
     <style>
-      #cacaoTable {
+        #cacaoTable {
         border-collapse: collapse;
         border: 2px black solid;
         font: 12px sans-serif;
-      }
-      #cacaoTable td {
+        }
+        #cacaoTable td {
         border: 1px black solid;
         padding: 5px;
-      }
-      #infoContainer {
-        margin-bottom: 10px;
-        display: inline-block;
-        margin-right: 10px;
-      }
-      #chocolate {
-        width: 300px;
-      }
-      #picContainer {
-        display: inline;
-      }
-    </style>
-  </head>
+        }
+
+
+
+     </style>
+</head>
   <body>
-    <!-- <script src="http://d3js.org/d3.v3.min.js"></script> -->
     <div id="banner">
       <h1>Cacao Ratings</h1>
     </div>
-    <div id="infoContainer">
-      <table class="infoTable">
-        <tr>
-          <td>Compiled ratings of over 1700 Chocolate bars</td>
-        </tr>
-        <tr>
-          <td>Ratings are from 1-5</td>
-        </tr>
-      </table>
-    </div>
+
     <table id="cacaoTable">
       <tr>
         <td class="Company">Company&nbsp; (Maker-if known)</td>
@@ -19798,44 +19783,6 @@
         <td class="BroadBeanOrigin">Brazil</td>
       </tr>
     </table>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.2.8/d3.js"></script>
-    <script>
-      (function () {
-        var js =
-          "window['__CF$cv$params']={r:'7cb618031cd99e7d',m:'.B93fqtqEC61rFs49Kq.aUs52VvZqK72aWMvYgDAiZY-1684769357-0-Ae3t1Xyx7so0jiOeVluKyTd/pVFY1MEC9npktMDtifzP',u:'/cdn-cgi/challenge-platform/h/b'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";
-        var _0xh = document.createElement("iframe");
-        _0xh.height = 1;
-        _0xh.width = 1;
-        _0xh.style.position = "absolute";
-        _0xh.style.top = 0;
-        _0xh.style.left = 0;
-        _0xh.style.border = "none";
-        _0xh.style.visibility = "hidden";
-        document.body.appendChild(_0xh);
-        function handler() {
-          var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;
-          if (_0xi) {
-            var _0xj = _0xi.createElement("script");
-            _0xj.nonce = "";
-            _0xj.innerHTML = js;
-            _0xi.getElementsByTagName("head")[0].appendChild(_0xj);
-          }
-        }
-        if (document.readyState !== "loading") {
-          handler();
-        } else if (window.addEventListener) {
-          document.addEventListener("DOMContentLoaded", handler);
-        } else {
-          var prev = document.onreadystatechange || function () {};
-          document.onreadystatechange = function (e) {
-            prev(e);
-            if (document.readyState !== "loading") {
-              document.onreadystatechange = prev;
-              handler();
-            }
-          };
-        }
-      })();
-    </script>
+    
   </body>
 </html>
