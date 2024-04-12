@@ -1,4 +1,4 @@
-import { Github, Twitter, Figma } from "lucide-react";
+import { Github, Facebook, Linkedin } from "lucide-react";
 
 import LogoJavascript from "/public/images/logos/newLogos/JavaScript.svg";
 import LogoTypescript from "/public/images/logos/newLogos/TypeScript.svg";
@@ -63,9 +63,14 @@ export const SOCIAL_LINKS = [
     url: "https://github.com/sudipnext",
   },
   {
-    icon: Twitter,
-    url: "https://twitter.com/sudipnext",
+    icon: Linkedin,
+    url: "https://www.linkedin.com/in/sudipnext/",
   },
+  {
+    icon: Facebook,
+    url: "https://www.facebook.com/sudipnext",
+  },
+  
 ];
 
 export const TECHNOLOGIES: TechDetails[] = [

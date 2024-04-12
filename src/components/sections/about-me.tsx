@@ -29,16 +29,16 @@ const AboutMeSection = () => {
         {/* Content */}
         <div className="flex max-w-xl flex-col gap-6">
           <Typography variant="h3">
-            Hello, Im Sudip Parajuli
+            Hello, I&apos;m Sudip Parajuli
           </Typography>
           <Typography>
-            A highly skilled professional specializing in Data Science, Python, SQL, and JavaScript. With a strong background in Electronics, Communication, and Information Engineering, I bring a unique blend of technical expertise and creative problem-solving abilities to every project.
+            A highly skilled specializing in Data Science, Python, SQL, and JavaScript. With a strong background in Electronics, Communication, and Information Engineering, I bring a unique blend of technical expertise and creative problem-solving abilities to every project. I love teaching and sharing my knowledge with others, and I am always looking for new opportunities to learn and grow.
           </Typography>
             Skills:
             <ul className="list-disc list-inside">
               <li>Proficient in Data Science, Web Scraping, Data Cleaning, and Web development using Python(Django, Django Rest Framework), SQL, and JavaScript.</li>
               <li>Experienced in building ecommerce products and dashboards that deliver meaningful solutions.</li>
-              <li>Strong knowledge of Web Scraping Libraries like bs4, selenium, mechanicalsoup, requests</li>
+              <li>Strong knowledge of Web Scraping Libraries like bs4,Scrapy, Selenium, mechanicalsoup, requests</li>
               <li>Skilled in developing web applications and working with databases like PostgreSql, Mongodb</li>
             </ul>
         </div>

@@ -12,7 +12,7 @@ const SkillsSection = () => {
           <Tag label="Skills" />
         </div>
         <Typography variant="subtitle" className="max-w-xl text-center">
-          Skills
+          I know very Wide Variety of Experiences from Web Development to IoT and Robotics.
         </Typography>
       </div>
 
