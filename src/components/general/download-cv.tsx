@@ -4,8 +4,8 @@ import Button from '@/components/general/button';
 
 const DownloadCV = () => {
   return (
-    <Button onClick={() => window?.open('/files/cv.html', '_blank')}>
-      View CV(old)
+    <Button onClick={() => window?.open('/files/Sudip Parajuli.pdf', '_blank')}>
+      Download CV
     </Button>
   );
 };
