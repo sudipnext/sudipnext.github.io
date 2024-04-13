@@ -74,21 +74,21 @@ export const SOCIAL_LINKS = [
 ];
 
 export const TECHNOLOGIES: TechDetails[] = [
-  {
-    label: "HTML5",
-    logo: LogoHTML5,
-    url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
-  },
-  {
-    label: "CSS3",
-    logo: LogoCSS3,
-    url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-  },
-  {
-    label: "Bootstrap",
-    logo: LogoBootstrap,
-    url: "https://getbootstrap.com/",
-  },
+  // {
+  //   label: "HTML5",
+  //   logo: LogoHTML5,
+  //   url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  // },
+  // {
+  //   label: "CSS3",
+  //   logo: LogoCSS3,
+  //   url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  // },
+  // {
+  //   label: "Bootstrap",
+  //   logo: LogoBootstrap,
+  //   url: "https://getbootstrap.com/",
+  // },
   {
     label: "Tailwindcss",
     logo: LogoTailwindcss,
@@ -109,16 +109,16 @@ export const TECHNOLOGIES: TechDetails[] = [
     logo: LogoJquery,
     url: "https://jquery.com/",
   },
-  {
-    label: "React",
-    logo: LogoReact,
-    url: "https://react.dev/",
-  },
-  {
-    label: "Next.js",
-    logo: LogoNextjs,
-    url: "https://nextjs.org/",
-  },
+  // {
+  //   label: "React",
+  //   logo: LogoReact,
+  //   url: "https://react.dev/",
+  // },
+  // {
+  //   label: "Next.js",
+  //   logo: LogoNextjs,
+  //   url: "https://nextjs.org/",
+  // },
   {
     label: "Node.js",
     logo: LogoNodejs,
@@ -195,22 +195,22 @@ export const TECHNOLOGIES: TechDetails[] = [
     logo: LogoROS2,
     url: "https://index.ros.org/doc/ros2/",
   },
-  {
-    label: "Solidity",
-    logo: LogoSolidity,
-    url: "https://soliditylang.org/",
-  },
+  // {
+  //   label: "Solidity",
+  //   logo: LogoSolidity,
+  //   url: "https://soliditylang.org/",
+  // },
 
-  {
-    label: "Blender",
-    logo: LogoBlender,
-    url: "https://www.blender.org/",
-  },
-  {
-    label: "Maya",
-    logo: LogoMaya,
-    url: "https://www.autodesk.com/products/maya/overview",
-  },
+  // {
+  //   label: "Blender",
+  //   logo: LogoBlender,
+  //   url: "https://www.blender.org/",
+  // },
+  // {
+  //   label: "Maya",
+  //   logo: LogoMaya,
+  //   url: "https://www.autodesk.com/products/maya/overview",
+  // },
   
   
 ];
