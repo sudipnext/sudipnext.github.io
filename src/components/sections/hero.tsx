@@ -31,7 +31,7 @@ const HeroSection = () => {
               <span className="inline-block animate-waving-hand">👋</span>
             </Typography>
             <Typography>
-              I&apos;m Sudip Parajuli, I love working on Projects involving Data Science, Web Scraping, Robotics and Web Development. I have a strong academic background in Electronics and Communication Engineering. I am here to help you achieve your goals and build human-centric products that create a positive impact.
+              I&apos;m Sudip Parajuli, I love working on Projects involving Data Science, Web Scraping, Robotics and Web Development. I prefer to code in Python Mostly and Sometimes Javascript. I am here to help you achieve your goals and build human-centric products that create a positive impact.
             </Typography>
           </div>
           <div className="flex flex-col gap-2">

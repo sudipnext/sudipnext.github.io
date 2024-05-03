@@ -215,7 +215,7 @@ export const EXPERIENCES: ExperienceDetails[] = [
     currentlyWorkHere: false,
     endDate: new Date(2024, 1),
     summary: [
-      "Development of a start-up company product by implementing different coding techniques.",
+      "Contribution on Development of a Video Based Ecommerce start-up company product by implementing different. Mostly Backend Systems",
       "Worked with a variety of technologies, including Django, Django Rest Framework, Django Admin Optimization, Postgresql Nuxt.js, Typescript, bs4, Selenium, MechanicalSoup, Scrapy, Jupyter Notebook, Numpy, Pandas, Large Data Handling, Data Cleaning,  TailwindCss, and others.",
     ],
   },
@@ -225,7 +225,7 @@ export const PROJECTS: ProjectDetails[] = [
   {
     name: "HeightComparision Website",
     description:
-      "Scraped thousands of Celebrity, Anime Height Data from Different Sources and Build a Complete Django Backend Website to Compare Height with Different Objects. Build a Khamis Rochies Height Prediction Model.",
+      "Scraped thousands of Celebrity, Anime Height Data from Different Sources and Build a Complete Django Rest API to Compare Height with Different Objects. Build a Khamis Rochies Height Prediction Model.",
     url: "https://www.heightcomparison.com/",
     previewImage: ProjectHeightComparison,
     technologies: [
