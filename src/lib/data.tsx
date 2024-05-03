@@ -28,19 +28,13 @@ import LogoCpp from "/public/images/logos/newLogos/C++.svg";
 import LogoBlender from "/public/images/logos/newLogos/Blender.svg";
 import LogoMaya from "/public/images/logos/newLogos/Maya.svg";
 
-
 import LogoKinu from "/public/images/logos/kinu_logo.png";
 import ProjectAllVideoDownloader from "/public/images/projects/AllVideoDownloader.png";
 import ProjectByaparLink from "/public/images/projects/Byaparlink.jpeg";
 import ProjectClipr from "/public/images/projects/Clipr.png";
 import ProjectHeightComparison from "/public/images/projects/Height.png";
 
-
-import {
-  ExperienceDetails,
-  ProjectDetails,
-  TechDetails,
-} from "@/lib/types";
+import { ExperienceDetails, ProjectDetails, TechDetails } from "@/lib/types";
 
 export const NAV_LINKS = [
   {
@@ -70,7 +64,6 @@ export const SOCIAL_LINKS = [
     icon: Facebook,
     url: "https://www.facebook.com/sudipnext",
   },
-  
 ];
 
 export const TECHNOLOGIES: TechDetails[] = [
@@ -211,8 +204,6 @@ export const TECHNOLOGIES: TechDetails[] = [
   //   logo: LogoMaya,
   //   url: "https://www.autodesk.com/products/maya/overview",
   // },
-  
-  
 ];
 
 export const EXPERIENCES: ExperienceDetails[] = [
@@ -228,12 +219,9 @@ export const EXPERIENCES: ExperienceDetails[] = [
       "Worked with a variety of technologies, including Django, Django Rest Framework, Django Admin Optimization, Postgresql Nuxt.js, Typescript, bs4, Selenium, MechanicalSoup, Scrapy, Jupyter Notebook, Numpy, Pandas, Large Data Handling, Data Cleaning,  TailwindCss, and others.",
     ],
   },
-  
-    
 ];
 
 export const PROJECTS: ProjectDetails[] = [
-
   {
     name: "HeightComparision Website",
     description:
@@ -251,18 +239,14 @@ export const PROJECTS: ProjectDetails[] = [
       "PostgreSQL",
     ],
   },
-  
+
   {
     name: "ByaparLink Ecommerce Dashboard",
     description:
-      "A One Stop destination for effortless shopping, offering a diverse range of products and food items, delivered swiftly to your doorstep!",
+      "Complete Django and DRF Based Multi Vendor Back-end with all Working Like Making Order, Reviews, Delivery, Interactive Dashboard made with all Major Functionality etc. Implemented a OTP based Authentication System",
     url: "https://byaparlink.com/",
     previewImage: ProjectByaparLink,
-    technologies: [
-      "Django",
-      "PostgreSQL",
-      "OpenStreetMap",
-    ],
+    technologies: ["Django", "PostgreSQL", "OpenStreetMap"],
   },
   {
     name: "All Video Downloader",
@@ -270,11 +254,7 @@ export const PROJECTS: ProjectDetails[] = [
       "All in One Youtube, Tiktok and Instagram Video Downloader with Django Backend.",
     url: "",
     previewImage: ProjectAllVideoDownloader,
-    technologies: [
-      "Django",
-      "SQLite",
-      "MechanicalSoup",
-    ],
+    technologies: ["Django", "SQLite", "MechanicalSoup"],
   },
   {
     name: "Clipr",
@@ -282,14 +262,6 @@ export const PROJECTS: ProjectDetails[] = [
       "A Complete URL Shortner Like Bit.ly with Dashboard features with full JWT Auth Project with Django. Currently Building in Progress..",
     url: "",
     previewImage: ProjectClipr,
-    technologies: [
-      "Django",
-      "Django Rest Framework",
-      "JWT Auth",
-      "PostgreSQL",
-    ],
+    technologies: ["Django", "Django Rest Framework", "JWT Auth", "PostgreSQL"],
   },
-  
 ];
-
-
