@@ -32,7 +32,7 @@ const AboutMeSection = () => {
             Hello, I&apos;m Sudip Parajuli
           </Typography>
           <Typography>
-            A highly skilled Person specializing in Data Science, Python, SQL, and JavaScript. I bring a unique blend of technical expertise and creative problem-solving abilities to every project. I love teaching and sharing my knowledge with others, and I am always looking for new opportunities to learn and grow.
+            A skilled Person specializing in Python, Data Science, SQL, and JavaScript. I bring a unique blend of technical expertise and creative problem-solving abilities to every project. I love teaching and sharing my knowledge with others, and I am always looking for new opportunities to learn and grow.
           </Typography>
             Skills:
             <ul className="list-disc list-inside">
