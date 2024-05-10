@@ -244,7 +244,7 @@ export const PROJECTS: ProjectDetails[] = [
     name: "Ecommerce Dashboard",
     description:
       "Complete Django and DRF Based Multi Vendor Back-end with all Working Like Making Order, Reviews, Delivery, Interactive Dashboard made with all Major Functionality etc. Implemented a OTP based Authentication System",
-    url: "https://byaparlink.com/",
+    url: "",
     previewImage: ProjectByaparLink,
     technologies: ["Django", "PostgreSQL", "OpenStreetMap"],
   },
