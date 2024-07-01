@@ -13,20 +13,14 @@ import LogoGit from "/public/images/logos/newLogos/Git.svg";
 import LogoDjango from "/public/images/logos/newLogos/Django.svg";
 import LogoRest from "/public/images/logos/newLogos/Django REST.svg";
 import LogoGithub from "/public/images/logos/newLogos/GitHub.svg";
-import LogoCSS3 from "/public/images/logos/newLogos/CSS3.svg";
-import LogoBootstrap from "/public/images/logos/newLogos/Bootstrap.svg";
 import LogoDocker from "/public/images/logos/newLogos/Docker.svg";
-import LogoHTML5 from "/public/images/logos/newLogos/HTML5.svg";
 import LogoPython from "/public/images/logos/newLogos/Python.svg";
-import LogoSolidity from "/public/images/logos/newLogos/Solidity.svg";
 import LogoArduino from "/public/images/logos/newLogos/Arduino.svg";
 import LogoROS2 from "/public/images/logos/newLogos/ROS2.svg";
 import LogoNuxt from "/public/images/logos/newLogos/Nuxt.js.svg";
 import LogoJquery from "/public/images/logos/newLogos/jQuery.svg";
 import LogoC from "/public/images/logos/newLogos/C.svg";
 import LogoCpp from "/public/images/logos/newLogos/C++.svg";
-import LogoBlender from "/public/images/logos/newLogos/Blender.svg";
-import LogoMaya from "/public/images/logos/newLogos/Maya.svg";
 
 import LogoKinu from "/public/images/logos/kinu_logo.png";
 import ProjectAllVideoDownloader from "/public/images/projects/AllVideoDownloader.png";
@@ -40,6 +34,10 @@ export const NAV_LINKS = [
   {
     label: "About",
     href: "#about",
+  },
+  {
+    label: "Blogs",
+    href: "https://medium.com/@sudipnext",
   },
   {
     label: "Work",
@@ -87,11 +85,11 @@ export const TECHNOLOGIES: TechDetails[] = [
     logo: LogoTailwindcss,
     url: "https://tailwindcss.com/",
   },
-  {
-    label: "Javascript",
-    logo: LogoJavascript,
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-  },
+  // {
+  //   label: "Javascript",
+  //   logo: LogoJavascript,
+  //   url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  // },
   {
     label: "Typescript",
     logo: LogoTypescript,
@@ -126,6 +124,16 @@ export const TECHNOLOGIES: TechDetails[] = [
     label: "Nuxt.js",
     logo: LogoNuxt,
     url: "https://nuxtjs.org/",
+  },
+  {
+    label: "React.js",
+    logo: LogoReact,
+    url: "https://react.dev/",
+  },
+  {
+    label: "Next.js",
+    logo: LogoNextjs,
+    url: "https://nextjs.org/",
   },
   {
     label: "Docker",
