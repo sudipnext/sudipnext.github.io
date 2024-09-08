@@ -25,6 +25,10 @@ module.exports = {
         },
       },
       keyframes: {
+        'gradient-x': {
+          '0%': { 'background-position': '0% 50%' },
+          '100%': { 'background-position': '100% 50%' },
+        },
         open: {
           '0%': {
             opacity: 1,
@@ -49,6 +53,7 @@ module.exports = {
         },
       },
       animation: {
+        'gradient-move': 'gradient-x 3s ease infinite',
         'drawer-open': 'open 0.3s ease-in-out',
         'drawer-close': 'close 0.3s ease-in-out',
         'waving-hand': 'waving 2s linear 3',

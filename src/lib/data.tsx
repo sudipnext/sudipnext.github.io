@@ -36,7 +36,11 @@ export const NAV_LINKS = [
     href: "#about",
   },
   {
-    label: "Blogs",
+    label: "Blogs[beta]",
+    href: "https://blog.parajulisudip.com.np/",
+  },
+  {
+    label: "Medium",
     href: "https://medium.com/@sudipnext",
   },
   {

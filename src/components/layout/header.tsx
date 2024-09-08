@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 import {
   Drawer,
   DrawerTrigger,
   DrawerContent,
   DrawerClose,
-} from '@/components/navigation/drawer';
-import { NAV_LINKS } from '@/lib/data';
-import { mergeClasses } from '@/lib/utils';
-import useWindowSize from '@/hooks/use-window-size';
-import useScroll from '@/hooks/use-scroll';
-import Link from '@/components/navigation/link';
-import ThemeSwitcher from '@/components/general/theme-switcher';
-import IconButton from '@/components/general/icon-button';
-import DownloadCV from '@/components/general/download-cv';
-import Typography from '@/components/general/typography';
+} from "@/components/navigation/drawer";
+import { NAV_LINKS } from "@/lib/data";
+import { mergeClasses } from "@/lib/utils";
+import useWindowSize from "@/hooks/use-window-size";
+import useScroll from "@/hooks/use-scroll";
+import Link from "@/components/navigation/link";
+import ThemeSwitcher from "@/components/general/theme-switcher";
+import IconButton from "@/components/general/icon-button";
+import DownloadCV from "@/components/general/download-cv";
+import Typography from "@/components/general/typography";
 
 const Logo = () => (
   <Typography variant="h3" className="font-bold">
-    {'<sudipnext />'}
+    {"<sudipnext />"}
   </Typography>
 );
 
@@ -40,8 +40,8 @@ const Header = () => {
   return (
     <header
       className={mergeClasses(
-        'sticky top-0 z-30 w-full border-b border-transparent bg-gray max-md:border-gray-100',
-        scrolled ? 'bg-gray/50 backdrop-blur-xl md:border-gray-100' : ''
+        "sticky top-0 z-30 w-full border-b border-transparent bg-gray max-md:border-gray-100",
+        scrolled ? "bg-gray/50 backdrop-blur-xl md:border-gray-100" : ""
       )}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between p-4 md:px-8">
@@ -50,11 +50,30 @@ const Header = () => {
         </Link>
         <div className="hidden items-center gap-6 md:flex">
           <ul className="flex list-none items-center gap-6">
-            {NAV_LINKS.map((link, index) => (
-              <li key={index}>
-                <Link href={link.href}>{link.label}</Link>
-              </li>
-            ))}
+            {NAV_LINKS.map((link, index) => {
+              if (link.label === "Blogs[beta]") {
+                return (
+                  <li key={index}>
+                    <Link
+                      className={
+                        link.label === "Blogs[beta]"
+                          ? "animate-gradient-move bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-[length:200%_200%] bg-clip-text font-bold text-transparent"
+                          : ""
+                      }
+                      href={link.href}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              } else {
+                return (
+                  <li key={index}>
+                    <Link href={link.href}>{link.label}</Link>
+                  </li>
+                );
+              }
+            })}
           </ul>
           <div className="h-6 w-0.5 bg-gray-100"></div>
           <div className="flex items-center gap-4">
@@ -80,21 +99,46 @@ const Header = () => {
             </div>
             <div className="border-b border-gray-100 p-4">
               <ul className="flex list-none flex-col gap-4">
-                {NAV_LINKS.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      href={link.href}
-                      onClick={() => {
-                        const timeoutId = setTimeout(() => {
-                          setIsOpen(false);
-                          clearTimeout(timeoutId);
-                        }, 500);
-                      }}
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                {NAV_LINKS.map((link, index) => {
+                  if (link.label === "Blogs[beta]") {
+                    return (
+                      <li key={index}>
+                        <Link
+                          className={
+                            link.label === "Blogs[beta]"
+                              ? "animate-gradient-move bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-[length:200%_200%] bg-clip-text font-bold text-transparent"
+                              : ""
+                          }
+                          href={link.href}
+                          onClick={() => {
+                            const timeoutId = setTimeout(() => {
+                              setIsOpen(false);
+                              clearTimeout(timeoutId);
+                            }, 500);
+                          }}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    );
+                  } else {
+                    return (
+                      <li key={index}>
+                        <Link
+                          href={link.href}
+                          onClick={() => {
+                            const timeoutId = setTimeout(() => {
+                              setIsOpen(false);
+                              clearTimeout(timeoutId);
+                            }, 500);
+                          }}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    );
+                  }
+                })}
               </ul>
             </div>
             <div className="flex flex-col gap-4 p-4">
