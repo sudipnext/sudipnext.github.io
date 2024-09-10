@@ -21,6 +21,10 @@ import LogoNuxt from "/public/images/logos/newLogos/Nuxt.js.svg";
 import LogoJquery from "/public/images/logos/newLogos/jQuery.svg";
 import LogoC from "/public/images/logos/newLogos/C.svg";
 import LogoCpp from "/public/images/logos/newLogos/C++.svg";
+import LogoEXCESS from "/public/images/logos/EXCESS.png";
+import LogoC4N from "/public/images/logos/c4n_logo.png";
+import LogoRobotics from "/public/images/logos/Robotics.webp";
+import LogoCS50 from "/public/images/logos/CS50.svg";
 
 import LogoKinu from "/public/images/logos/kinu_logo.png";
 import ProjectAllVideoDownloader from "/public/images/projects/AllVideoDownloader.png";
@@ -219,6 +223,58 @@ export const TECHNOLOGIES: TechDetails[] = [
 ];
 
 export const EXPERIENCES: ExperienceDetails[] = [
+  {
+    logo: LogoEXCESS,
+    logoAlt: "EXCESS",
+    position: "Advisor",
+    startDate: new Date(2024, 4),
+    currentlyWorkHere: true,
+    endDate: undefined,
+    summary: [
+      "Previously served as Secretary and Vice Secretary position",
+      "Serving as an advisor at Electronics And Communication Engineering Student Society (EXCESS).",
+      "Guiding and mentoring the student society for projects and initiatives.",
+      "Instructed 300+ students on topics ranging from Python, WebScraping, MicroController, IoT to Django.",
+      "Mentored and Organized Nepal's Biggest Hardware Hackathon - X-Hack 2.0."
+    ],
+  },
+  {
+    logo: LogoC4N,
+    logoAlt: "Code for Nepal",
+    position: "Data Science Fellow",
+    startDate: new Date(2021, 11),
+    currentlyWorkHere: true,
+    endDate: undefined,
+    summary: [
+      "Worked on data science projects with a focus on SQL and Python.",
+      "Contributed to various social and technical initiatives for Code for Nepal.",
+    ],
+  },
+  {
+    logo: LogoRobotics,
+    logoAlt: "Robotics Club IOEPC",
+    position: "Active Member",
+    startDate: new Date(2021, 4),
+    currentlyWorkHere: true,
+    endDate: undefined,
+    summary: [
+      "Served as a Robotics Week trainer and active club member.",
+      "Involved in projects and initiatives using Robotics and Python.",
+      "Instructed 500+ students on topics of Python, and Robotics",
+    ],
+  },
+  {
+    logo: LogoCS50,
+    logoAlt: "CS50x Nepal",
+    position: "Instructor and Hackathon Incharge",
+    startDate: new Date(2023, 11),
+    currentlyWorkHere: false,
+    endDate: new Date(2024, 4),
+    summary: [
+      "Organized and instructed in the world-famous CS50 lectures from Harvard and Yale University.",
+      "Served as the Hackathon Incharge and instructor for the CS50x Nepal program.",
+    ],
+  },
   {
     logo: LogoKinu,
     logoAlt: "KinuTech",
