@@ -7,12 +7,18 @@ import RoboticsTrainer from '/public/images/rbtcs.jpg'
 import WebScraping from '/public/images/WebScrapingWorkshop2024.jpg'
 import CS50XNepal from '/public/images/CS50XNEPAL-DATABASES.jpg'
 import CS50xSwags from '/public/images/CS50XNEPAL-SWAGS.jpg'
+import fullpic from '/public/images/fullpic.jpg'  
+import GROUPCS50 from '/public/images/GROUPCS50.png'
+import SUDIPNEXT from '/public/images/SUDIPNEXT.jpg'
+import sudipnext from '/public/images/sudipnext.png'
+import cover from '/public/images/cover.jpg'
+
 
 import Tag from '@/components/data-display/tag';
 import Container from '@/components/layout/container';
 import Typography from '@/components/general/typography';
 
-const images = [coding, WebScraping, PythonAndDjango, RoboticsTrainer, CS50XNepal, CS50xSwags];
+const images = [coding, WebScraping, PythonAndDjango, RoboticsTrainer, CS50XNepal, CS50xSwags, fullpic, GROUPCS50, SUDIPNEXT, sudipnext, cover];
 
 const AboutMeSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

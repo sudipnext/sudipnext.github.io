@@ -223,6 +223,17 @@ export const TECHNOLOGIES: TechDetails[] = [
 ];
 
 export const EXPERIENCES: ExperienceDetails[] = [
+  // {
+  //   logo: LogoCS50,
+  //   logoAlt: "CS50x Nepal",
+  //   position: "University Lead @CS50AI CS50x Nepal",
+  //   startDate: new Date(2023, 11),
+  //   currentlyWorkHere: false,
+  //   endDate: new Date(2024, 4),
+  //   summary: [
+  //     "Contributed to teaching 60 students in the field of AI through a 15-Day interactive lecture series featuring industry and local experts. Organized X-Hack 3.0, a CS50 AI-inspired hackathon, and successfully launched the CS50 Fair for the first time in Nepal.",
+  //   ],
+  // },
   {
     logo: LogoEXCESS,
     logoAlt: "EXCESS",
