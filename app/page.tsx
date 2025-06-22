@@ -4,14 +4,11 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 import { siteConfig } from "@/config/site"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Terminal } from "@/components/terminal"
 
 // Import icons from react-icons
 import { SiPython, SiJavascript, SiTypescript, SiCplusplus, SiDjango, SiReact, SiNextdotjs, SiTailwindcss, SiDocker, SiAmazonwebservices, SiPostgresql, SiMongodb, SiRedis, SiPytorch, SiFastapi, SiGithubactions, SiNuxtdotjs, SiHuggingface } from "react-icons/si"
-import fs from "fs"
-import path from "path"
 import { useEffect, useState } from "react"
 
 // Slideshow component
