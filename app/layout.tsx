@@ -15,15 +15,32 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: ["Portfolio", "Developer", "Data Science", "Web Development", "Python", "JavaScript"],
+  keywords: [
+    "Portfolio",
+    "Developer",
+    "Data Science",
+    "Web Development",
+    "Python",
+    "JavaScript",
+    "Sudip Parajuli",
+    "sudipnext",
+    "Dev in Nepal",
+    "Nepal Developer",
+    "Full Stack Developer",
+    "React",
+    "Next.js",
+    "SEO",
+    "Open Source",
+    "Tech Blog",
+    "Personal Website"
+  ],
   authors: [
     {
       name: siteConfig.name,
-      url: "https://sudipparajuli.com",
+      url: "https://parajulisudip.com.np",
     },
   ],
-  creator: siteConfig.name,
-    generator: 'v0.dev'
+  creator: siteConfig.name
 }
 
 export default function RootLayout({

@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
@@ -9,6 +10,60 @@ import { Terminal } from "@/components/terminal"
 
 // Import icons from react-icons
 import { SiPython, SiJavascript, SiTypescript, SiCplusplus, SiDjango, SiReact, SiNextdotjs, SiTailwindcss, SiDocker, SiAmazonwebservices, SiPostgresql, SiMongodb, SiRedis, SiPytorch, SiFastapi, SiGithubactions, SiNuxtdotjs, SiHuggingface } from "react-icons/si"
+import fs from "fs"
+import path from "path"
+import { useEffect, useState } from "react"
+
+// Slideshow component
+function Slideshow() {
+  const [images, setImages] = useState<string[]>([])
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    // Dynamically import all images from public/images/slideshow
+    const importAll = (r: { keys: () => string[]; (key: string): any }) => r.keys().map(r)
+    // @ts-ignore
+    const imgs = importAll(require.context("/public/images/slideshow", false, /\.(png|jpe?g|svg|webp)$/))
+    setImages(imgs.map((img: any) => img.default || img))
+  }, [])
+
+  useEffect(() => {
+    if (images.length === 0) return
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [images])
+
+  if (images.length === 0) return null
+
+  return (
+    <div className="w-full flex flex-col items-center my-12">
+      <div className="relative w-full max-w-xl h-64 rounded-lg overflow-hidden shadow-lg border bg-black flex items-center justify-center">
+        {images.map((src, idx) => (
+          <Image
+            key={idx}
+            src={src}
+            alt={`Slideshow image ${idx + 1}`}
+            fill
+            className={`transition-opacity duration-700 ${idx === current ? "opacity-100" : "opacity-0"}`}
+            style={{ objectFit: "contain", position: "absolute" }}
+            sizes="(max-width: 600px) 100vw, 600px"
+            priority={idx === current}
+          />
+        ))}
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
+          {images.map((_, idx) => (
+            <span
+              key={idx}
+              className={`h-2 w-2 rounded-full ${idx === current ? "bg-primary" : "bg-muted-foreground/40"}`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function Home() {
   return (
@@ -86,6 +141,8 @@ export default function Home() {
       {/* About Me Section */}
       <section className="container mx-auto px-4 py-16 animate-fade-in animation-delay-500">
         <h2 className="text-3xl font-bold text-center mb-12">About Me</h2>
+        {/* Slideshow Section */}
+        <Slideshow />
         <div className="max-w-3xl mx-auto text-muted-foreground leading-relaxed mb-12">
           <p>
             A skilled Person specializing in Python, Data Science, SQL, and JavaScript. I bring a unique blend of technical expertise and creative problem-solving abilities to every project. I love teaching and sharing my knowledge with others, and I am always looking for new opportunities to learn and grow.
@@ -170,6 +227,8 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        
       </section>
 
       {/* Recent Blog Posts */}
