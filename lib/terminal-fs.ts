@@ -56,7 +56,7 @@ BeautifulSoup, Scrapy, Selenium, Requests`,
                 "contact.txt": {
                   name: "contact.txt",
                   type: "file",
-                  content: `Email: contact@sudipparajuli.com
+                  content: `Email: info@parajulisudip.com.np
 GitHub: https://github.com/sudipnext
 LinkedIn: https://linkedin.com/in/sudipnext
 Twitter: https://twitter.com/sudipnext`,

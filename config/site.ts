@@ -29,7 +29,7 @@ export const siteConfig = {
     },
     {
       name: "Email",
-      url: "mailto:contact@sudipparajuli.com",
+      url: "mailto:info@parajulisudip.com.np",
       icon: Mail,
     },
   ],
@@ -241,7 +241,7 @@ export const siteConfig = {
       name: "Sudip Parajuli",
       location: "Dharan, Nepal",
       email: "coc42060@gmail.com",
-      alternateEmail: "contact@sudipparajuli.com",
+      alternateEmail: "info@parajulisudip.com.np",
       phone: "(+977) 9811359372",
       website: "parajulisudip.com.np",
       status: "Open For Work"
