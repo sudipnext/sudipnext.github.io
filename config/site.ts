@@ -104,6 +104,13 @@ export const siteConfig = {
       github: "https://github.com/CS50xNepalOfficial/AttendenceSystem"
     },
     {
+      title: "International Conference on Recent Trends in Artificial Intelligence",
+      description: "Conference website for ICRTAI 2025, featuring event details, speaker profiles, and registration.",
+      tags: ["Next.js", "TailwindCSS", "Cloudflare", "GitHub Pages"],
+      image: "/projects/ICRTAI.png",
+      link: "https://icrtai.com"
+    },
+    {
       title: "Jha Consultancy Portfolio Website ",
       description: "Professional portfolio website showcasing Jha Consultancy's services and projects.",
       tags: ["Next.js", "Cloudflare", "Github Pages", "TailwindCSS"],
