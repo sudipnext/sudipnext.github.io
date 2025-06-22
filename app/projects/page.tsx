@@ -17,7 +17,7 @@ export default function ProjectsPage() {
       <h1 className="text-4xl font-bold mb-8">My Projects</h1>
       <p className="text-xl text-muted-foreground mb-12 max-w-3xl">
         Here are some of the projects I've worked on. Each project represents my skills and passion for building
-        innovative solutions.
+        innovative solutions. You can find other projects on my GitHub.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -63,6 +63,13 @@ export default function ProjectsPage() {
                     <a href={project.link} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Demo
+                    </a>
+                  </Button>
+                )}
+                {project.paper && (
+                  <Button size="sm" variant="outline" asChild>
+                    <a href={project.paper} target="_blank" rel="noopener noreferrer">
+                      <span className="mr-2">Paper</span>
                     </a>
                   </Button>
                 )}

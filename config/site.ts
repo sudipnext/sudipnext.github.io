@@ -86,14 +86,14 @@ export const siteConfig = {
       description: "A graph-based recommendation engine with sophisticated user preference analysis, developed as a final-year academic project.",
       tags: ["Python", "Django", "Graph Database", "Authentication", "DRF", "PostgreSQL", "Milvus", "Pytorch", "Pytorch Geometric", "Graph Neural Network"],
       image: "/projects/GNNMovieRecommendation.png",
-      github: "https://youtu.be/oyYRzqYHRWY"
+      link: "https://youtu.be/oyYRzqYHRWY"
     },
     {
       title: "QuoteReels",
       description: "Flask app that automatically generates short-form video content by combining AI-analyzed quotes with relevant background videos.",
       tags: ["Python", "Flask", "JavaScript", "HTML", "CSS", "GEMINI", "Coverr", "MoviePy"],
       image: "/projects/QuoteToReels.png",
-      github: "https://youtu.be/5Wd5WKrFXTo"
+      link: "https://youtu.be/5Wd5WKrFXTo"
     },
     
     {
@@ -104,13 +104,6 @@ export const siteConfig = {
       github: "https://github.com/CS50xNepalOfficial/AttendenceSystem"
     },
     {
-      title: "CS50 AI Class Visualizations",
-      description: "Web application providing data visualizations for CS50 AI classes.",
-      tags: ["Python", "Flask", "JavaScript", "HTML", "CSS", "DASH"],
-      image: "",
-      github: "https://github.com/CS50xNepalOfficial/CS50xAI-Visualizations"
-    },
-    {
       title: "Jha Consultancy Portfolio Website ",
       description: "Professional portfolio website showcasing Jha Consultancy's services and projects.",
       tags: ["Next.js", "Cloudflare", "Github Pages", "TailwindCSS"],
@@ -118,13 +111,44 @@ export const siteConfig = {
       link: "https://jhaconsultancy.co.in/"
     },
     {
-      title: "Mini Lenovo Energy Management Tool(UnOfficial)",
-      description: "Utility for managing energy settings on Lenovo devices running Linux.",
-      tags: ["Python", "Linux", "Energy Management", "QT"],
-      image: "",
-      github: "https://github.com/sudipnext/lenovo_energy_management"
+      title: "Height Comparision",
+      description: "API for comparing heights using scraped celebrity and anime character data, with height prediction model.",
+      tags: ["Python", "Django", "Web Scraping", "Machine Learning"],
+      image: "/projects/Height.png",
+      link: "https://www.heightcomparison.com/",
+    },
+
+    {
+      title: "Autonomous Robot from with ROS2 and Nav2",
+      description: "Autonomous navigation robot using ROS2 and Nav2, featuring custom serial communication with Arduino microcontrollers for efficient data handling and precise movement.",
+      tags: ["ROS2", "Nav2", "Python", "C++", "Robot"],
+      image: "/projects/system_diagram_final.png",
+      link: "https://youtu.be/62uYFLbEVDE",
+      paper: "https://ieeexplore.ieee.org/document/10933029",
     },
     {
+      title: "Automatic Emergency Response System",
+      description: "IoT system for emergency detection and alert notification.",
+      tags: ["C++","C", "ESP 32", "IoT", "Arduino IDE", "MQTT", "NodeRed", "JS"],
+      image: "/projects/Automatic Emergency Response System.png",
+      link: "https://youtu.be/PkWDqFJrmbY",
+      github: "https://github.com/sudipnext/Automatic-Emergency-Response-System"
+    },
+    {
+      title: "Clipr",
+      description: "URL shortener with usage tracking and metrics.",
+      tags: ["React", "Next.js", "JavaScript", "ShadCN", "docker", "docker-compose"],
+      image: "/projects/Clipr.png",
+      github: "https://github.com/sudipnext/url-shortner.git"
+    },
+    {
+      title: "All Video Downloader",
+      description: "Web app for downloading videos from YouTube, Facebook, and Instagram.",
+      tags: ["HTML", "CSS", "Django", "JavaScript", "Web Scraping"],
+      image: "/projects/AllVideoDownloader.png",
+      link: "#",
+    },
+      {
       title: "Expenses Manager",
       description: "Web application for personal expense tracking and budget management.",
       tags: ["Python", "Django", "JavaScript", "Bootstrap"],
@@ -153,35 +177,6 @@ export const siteConfig = {
       github: "https://github.com/sudipnext/cryptGen"
     },
     {
-      title: "Height Comparision",
-      description: "API for comparing heights using scraped celebrity and anime character data, with height prediction model.",
-      tags: ["Python", "Django", "Web Scraping", "Machine Learning"],
-      image: "/projects/Height.png",
-      link: "https://www.heightcomparison.com/",
-    },
-    {
-      title: "Autonomous Robot from with ROS2 and Nav2",
-      description: "Autonomous navigation robot using ROS2 and Nav2, featuring custom serial communication with Arduino microcontrollers for efficient data handling and precise movement.",
-      tags: ["ROS2", "Nav2", "Python", "C++", "Robot"],
-      image: "/projects/system_diagram_final.png",
-      link: "https://youtu.be/62uYFLbEVDE",
-      paper: "https://ieeexplore.ieee.org/document/10933029",
-    },
-    {
-      title: "Clipr",
-      description: "URL shortener with usage tracking and metrics.",
-      tags: ["React", "Next.js", "JavaScript", "ShadCN", "docker", "docker-compose"],
-      image: "/projects/Clipr.png",
-      github: "https://github.com/sudipnext/url-shortner.git"
-    },
-    {
-      title: "All Video Downloader",
-      description: "Web app for downloading videos from YouTube, Facebook, and Instagram.",
-      tags: ["HTML", "CSS", "Django", "JavaScript", "Web Scraping"],
-      image: "/projects/AllVideoDownloader.png",
-      link: "#",
-    },
-    {
       title: "NayaRojgar",
       description: "Job portal connecting job seekers with employers.",
       tags: ["Html", "CSS", "JS", "Django", "Bootstrap"],
@@ -197,12 +192,18 @@ export const siteConfig = {
       github: "https://github.com/sudipnext/blog",
     },
     {
-      title: "Automatic Emergency Response System",
-      description: "IoT system for emergency detection and alert notification.",
-      tags: ["C++","C", "ESP 32", "IoT", "Arduino IDE", "MQTT", "NodeRed", "JS"],
-      image: "/projects/Automatic Emergency Response System.png",
-      link: "https://youtu.be/PkWDqFJrmbY",
-      github: "https://github.com/sudipnext/Automatic-Emergency-Response-System"
+      title: "CS50 AI Class Visualizations",
+      description: "Web application providing data visualizations for CS50 AI classes.",
+      tags: ["Python", "Flask", "JavaScript", "HTML", "CSS", "DASH"],
+      image: "",
+      github: "https://github.com/CS50xNepalOfficial/CS50xAI-Visualizations"
+    },
+    {
+      title: "Mini Lenovo Energy Management Tool(UnOfficial)",
+      description: "Utility for managing energy settings on Lenovo devices running Linux.",
+      tags: ["Python", "Linux", "Energy Management", "QT"],
+      image: "",
+      github: "https://github.com/sudipnext/lenovo_energy_management"
     }
   ],
 
