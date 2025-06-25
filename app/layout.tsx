@@ -6,6 +6,7 @@ import "./globals.css"
 import { siteConfig } from "@/config/site"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Navbar } from "@/components/navbar"
+import GlowingCursor from "@/components/GlowingCursor"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -16,13 +17,13 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
+    "Sudip Parajuli",
     "Portfolio",
     "Developer",
     "Data Science",
     "Web Development",
     "Python",
     "JavaScript",
-    "Sudip Parajuli",
     "sudipnext",
     "Dev in Nepal",
     "Nepal Developer",
@@ -51,6 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
+        <GlowingCursor />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Navbar />
           <main className="pt-16">{children}</main>
