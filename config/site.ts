@@ -83,7 +83,7 @@ export const siteConfig = {
   projects: [
     {
       title: "nexREC",
-      description: "A graph-based recommendation engine with sophisticated user preference analysis, developed as a final-year academic project.",
+      description: "AI graph-based recommendation engine with sophisticated user preference analysis, developed as a final-year academic project.",
       tags: ["Python", "Django", "Graph Database", "Authentication", "DRF", "PostgreSQL", "Milvus", "Pytorch", "Pytorch Geometric", "Graph Neural Network"],
       image: "/projects/GNNMovieRecommendation.png",
       link: "https://youtu.be/oyYRzqYHRWY"
@@ -274,13 +274,24 @@ export const siteConfig = {
     
     experience: [
       {
+        organization: "Exploreden Australia",
+        positions: [
+          {
+            title: "Full Stack Engineer (Remote)",
+            period: "2024 Aug - Present",
+            company: "Exploreden Australia",
+            description: "Developed and maintained a comprehensive travel booking platform using Django and React, enhancing user experience and functionality. Integrated third-party APIs for hotel bookings, flight searches, and payment gateways, ensuring seamless transactions. Implemented responsive design principles to optimize the platform for various devices, improving accessibility and user engagement. Collaborated and Led the technical team to gather requirements, design features, and deploy updates."
+          }
+        ]
+      },
+      {
         organization: "Kinu Tech Pvt. Ltd",
         positions: [
           {
             title: "Backend Engineer",
-            period: "2024 Sept - Present",
+            period: "2024 Sept - 2024 Aug",
             company: "Kinu Tech Pvt. Ltd",
-            description: "Proficient in Basic AWS Services like EC2, Lambda, CDK, Beanstalk, Lightsail etc. Learned CI/CD techniques with GitHub Actions. Major Experience Working with technologies like Django, Django REST Framework, React, Next.js. Worked on an international travel booking application. Created entire Django backend from scratch, implemented multiple APIs like Hotelbeds. Implemented Recommendation Systems using Gorse. Implemented Stripe for Payment Gateway. Optimized application performance by implementing caching strategies and microservices, leveraging Celery for task queuing, AWS Lambda for scheduled tasks, and AWS CDK with ECR for efficient deployment which improved system performance by 3 times. Implemented Google OAuth2 along with robust login/signup platform."
+            description: "Proficient in Basic AWS Services like EC2, Lambda, CDK, Beanstalk, Lightsail etc. Learned CI/CD techniques with GitHub Actions. Major Experience Working with technologies like Django, Django REST Framework, React, Next.js. Worked on an international travel booking application. Created Django backend, implemented multiple APIs like Hotelbeds, Ratehawk. Implemented Recommendation Systems using Gorse. Implemented Stripe for Payment Gateway. Optimized application performance by implementing caching strategies and microservices, leveraging Celery for task queuing, AWS Lambda for scheduled tasks, and AWS CDK with ECR for efficient deployment which improved system performance by 3 times. Implemented Google OAuth2 along with robust login/signup platform."
           },
           {
             title: "Junior Backend Engineer",
