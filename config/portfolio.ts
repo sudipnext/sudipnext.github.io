@@ -1,6 +1,7 @@
 export const links = {
   github: "https://github.com/sudipnext",
   linkedin: "https://www.linkedin.com/in/sudipnext/",
+  scholar: "https://scholar.google.com/citations?user=9NtxD5EAAAAJ&hl=en",
   blog: "https://blog.parajulisudip.com.np",
   medium: "https://medium.com/@sudipnext",
   email: "mailto:info@parajulisudip.com.np",

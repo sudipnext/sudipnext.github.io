@@ -37,6 +37,7 @@ export default function HomePage() {
           <div className="link-row" aria-label="Profile links">
             <ArrowLink href={links.github}>GitHub</ArrowLink>
             <ArrowLink href={links.linkedin}>LinkedIn</ArrowLink>
+            <ArrowLink href={links.scholar}>Google Scholar</ArrowLink>
             <ArrowLink href={links.blog}>Blog</ArrowLink>
             <a className="text-link" href={links.email}>Email</a>
           </div>

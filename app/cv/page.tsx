@@ -29,6 +29,7 @@ export default function CVPage() {
           <a className="text-link" href={links.email}>info@parajulisudip.com.np</a>
           <a className="text-link" href={links.github} target="_blank" rel="noreferrer">GitHub ↗</a>
           <a className="text-link" href={links.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a className="text-link" href={links.scholar} target="_blank" rel="noreferrer">Google Scholar ↗</a>
         </div>
       </div>
 
