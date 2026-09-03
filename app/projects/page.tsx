@@ -1,5 +1,3 @@
-import Link from "next/link"
-
 import { projects } from "@/config/portfolio"
 
 export const metadata = {
@@ -42,10 +40,10 @@ export default function ProjectsPage() {
   return (
     <main className="page-shell">
       <header className="site-header">
-        <Link href="/" className="site-name">Sudip Parajuli</Link>
+        <a href="/" className="site-name">Sudip Parajuli</a>
         <nav aria-label="Primary navigation">
-          <Link href="/">home</Link>
-          <Link href="/cv">cv</Link>
+          <a href="/">home</a>
+          <a href="/cv/">cv</a>
         </nav>
       </header>
 
@@ -76,7 +74,7 @@ export default function ProjectsPage() {
       </section>
 
       <footer className="footer">
-        <p><Link className="text-link" href="/">← home</Link></p>
+        <p><a className="text-link" href="/">← home</a></p>
         <p>Selected work, not an exhaustive archive.</p>
       </footer>
     </main>

@@ -1,5 +1,3 @@
-import Link from "next/link"
-
 import { experience, links } from "@/config/portfolio"
 
 export const metadata = {
@@ -19,10 +17,10 @@ export default function CVPage() {
   return (
     <main className="page-shell">
       <header className="site-header">
-        <Link href="/" className="site-name">Sudip Parajuli</Link>
+        <a href="/" className="site-name">Sudip Parajuli</a>
         <nav aria-label="Primary navigation">
-          <Link href="/">home</Link>
-          <Link href="/projects">projects</Link>
+          <a href="/">home</a>
+          <a href="/projects/">projects</a>
         </nav>
       </header>
 
@@ -111,7 +109,7 @@ export default function CVPage() {
       </section>
 
       <footer className="footer">
-        <p><Link className="text-link" href="/">← home</Link></p>
+        <p><a className="text-link" href="/">← home</a></p>
         <p>Dharan, Nepal · available remotely</p>
       </footer>
     </main>

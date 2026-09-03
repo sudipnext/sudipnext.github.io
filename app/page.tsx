@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
 
 import { experience, links, projects, writing } from "@/config/portfolio"
 
@@ -21,10 +20,10 @@ export default function HomePage() {
   return (
     <main className="page-shell">
       <header className="site-header">
-        <Link href="/" className="site-name">Sudip Parajuli</Link>
+        <a href="/" className="site-name">Sudip Parajuli</a>
         <nav aria-label="Primary navigation">
-          <Link href="/projects">projects</Link>
-          <Link href="/cv">cv</Link>
+          <a href="/projects/">projects</a>
+          <a href="/cv/">cv</a>
         </nav>
       </header>
 
@@ -75,7 +74,7 @@ export default function HomePage() {
       <section className="section" aria-labelledby="work-heading">
         <div className="section-heading">
           <h2 id="work-heading">selected work</h2>
-          <Link href="/projects" className="quiet-link">all projects →</Link>
+          <a href="/projects/" className="quiet-link">all projects →</a>
         </div>
         <div className="item-list">
           {projects.map((project) => (
