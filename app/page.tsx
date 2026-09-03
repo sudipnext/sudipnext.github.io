@@ -56,13 +56,6 @@ export default function HomePage() {
         />
       </section>
 
-      <section className="signal-grid" aria-label="Career highlights">
-        <div><strong>700+</strong><span>Presenton contributions</span></div>
-        <div><strong>1</strong><span>IEEE publication</span></div>
-        <div><strong>60+</strong><span>AI learners mentored</span></div>
-        <div><strong>20+</strong><span>projects across disciplines</span></div>
-      </section>
-
       <section className="section" aria-labelledby="focus-heading">
         <div className="section-label">
           <span>01</span>

@@ -5,7 +5,7 @@ export const links = {
   medium: "https://medium.com/@sudipnext",
   email: "mailto:info@parajulisudip.com.np",
   presenton: "https://presenton.ai",
-  resume: "/Sudip Parajuli.pdf",
+  resume: "/Sudip-Parajuli-Resume.pdf",
 }
 
 export type Project = {

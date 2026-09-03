@@ -168,39 +168,6 @@ p { margin-bottom: 0.85rem; }
   margin-top: 1.3rem;
 }
 
-.signal-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 4rem;
-  border-top: 1px solid var(--faint);
-  border-bottom: 1px solid var(--faint);
-}
-
-.signal-grid div {
-  min-height: 112px;
-  padding: 1.3rem 1rem;
-  border-right: 1px solid var(--faint);
-}
-
-.signal-grid div:first-child { padding-left: 0; }
-.signal-grid div:last-child { border-right: 0; }
-
-.signal-grid strong {
-  display: block;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.85rem;
-  font-weight: 500;
-  line-height: 1.25;
-}
-
-.signal-grid span {
-  display: block;
-  margin-top: 0.3rem;
-  color: var(--muted);
-  font-size: 0.82rem;
-  line-height: 1.4;
-}
-
 .section,
 .project-group {
   display: grid;
@@ -385,12 +352,6 @@ p { margin-bottom: 0.85rem; }
     width: 112px;
     height: 112px;
   }
-
-  .signal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 3rem; }
-  .signal-grid div { min-height: 100px; }
-  .signal-grid div:nth-child(2) { border-right: 0; }
-  .signal-grid div:nth-child(n + 3) { border-top: 1px solid var(--faint); }
-  .signal-grid div:nth-child(odd) { padding-left: 0; }
 
   .section,
   .project-group {
