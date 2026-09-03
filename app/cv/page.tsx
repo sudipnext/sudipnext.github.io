@@ -1,17 +1,9 @@
-import { experience, links } from "@/config/portfolio"
+import { experience, links, projects, skillGroups } from "@/config/portfolio"
 
 export const metadata = {
   title: "CV",
-  description: "Experience, education, and technical background of Sudip Parajuli.",
+  description: "Experience, education, research, projects, and technical background of Sudip Parajuli.",
 }
-
-const skills = [
-  ["Backend", "Python, Django, Django REST Framework, FastAPI, Celery, Node.js"],
-  ["Frontend", "TypeScript, React, Next.js, Remix, Tailwind CSS"],
-  ["AI & data", "PyTorch, PyTorch Geometric, pandas, NumPy, Milvus, recommendation systems"],
-  ["Infrastructure", "PostgreSQL, Redis, Docker, AWS, GitHub Actions, Nginx"],
-  ["Other", "ROS 2, Nav2, SLAM, web scraping, document processing"],
-]
 
 export default function CVPage() {
   return (
@@ -24,24 +16,51 @@ export default function CVPage() {
         </nav>
       </header>
 
-      <div className="subpage-intro">
-        <h1>Curriculum vitae</h1>
-        <p>
-          Software engineer working across backend systems, product engineering,
-          open-source AI tools, and applied machine learning.
+      <div className="subpage-intro cv-intro">
+        <p className="eyebrow">Curriculum vitae</p>
+        <h1>Software Engineer</h1>
+        <p className="lead-small">
+          Product-minded engineer with experience across open-source AI systems,
+          backend architecture, full-stack applications, applied machine learning,
+          cloud infrastructure, and robotics.
         </p>
-        <p className="cv-actions">
-          <a className="text-link" href={links.resume} download>download PDF ↓</a>
-          <span aria-hidden="true"> · </span>
-          <a className="text-link" href={links.email}>email</a>
-          <span aria-hidden="true"> · </span>
+        <div className="contact-line">
+          <span>Dharan, Nepal</span>
+          <a className="text-link" href={links.email}>info@parajulisudip.com.np</a>
+          <a className="text-link" href={links.github} target="_blank" rel="noreferrer">GitHub ↗</a>
           <a className="text-link" href={links.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        </div>
+        <p className="cv-actions">
+          <a className="download-link" href={links.resume} download>Download PDF résumé ↓</a>
         </p>
       </div>
 
+      <section className="section" aria-labelledby="summary-heading">
+        <div className="section-label">
+          <span>01</span>
+          <h2 id="summary-heading">Profile</h2>
+        </div>
+        <div className="section-content prose-block">
+          <p>
+            I take products from ambiguous requirements to working systems. My recent
+            work centers on AI-assisted document creation and model-agnostic agent
+            workflows; my earlier work includes travel infrastructure, recommendation
+            systems, payments, data pipelines, and cloud deployment.
+          </p>
+          <p>
+            My engineering background also crosses into electronics and autonomous
+            robotics. Alongside professional work, I have led technical communities,
+            mentored AI learners, organized national hackathons, and published with IEEE.
+          </p>
+        </div>
+      </section>
+
       <section className="section" aria-labelledby="experience-heading">
-        <h2 id="experience-heading">experience</h2>
-        <div className="timeline">
+        <div className="section-label">
+          <span>02</span>
+          <h2 id="experience-heading">Experience</h2>
+        </div>
+        <div className="section-content timeline">
           {experience.map((item) => (
             <article className="timeline-item" key={`${item.period}-${item.organization}`}>
               <time>{item.period}</time>
@@ -52,36 +71,26 @@ export default function CVPage() {
               </div>
             </article>
           ))}
-          <article className="timeline-item">
-            <time>2021 — 2025</time>
-            <div>
-              <h3>Data fellow</h3>
-              <p className="organization">Code for Nepal</p>
-              <p>
-                Studied and applied Python, SQL, data analysis, visualization,
-                machine learning, version control, and cloud fundamentals.
-              </p>
-            </div>
-          </article>
         </div>
       </section>
 
       <section className="section" aria-labelledby="education-heading">
-        <h2 id="education-heading">education</h2>
-        <div className="timeline">
+        <div className="section-label">
+          <span>03</span>
+          <h2 id="education-heading">Education & research</h2>
+        </div>
+        <div className="section-content timeline">
           <article className="timeline-item">
             <time>2021 — 2025</time>
             <div>
               <h3>B.E. in Electronics, Communication and Information Engineering</h3>
               <p className="organization">Tribhuvan University · IOE, Purwanchal Campus</p>
+              <p>
+                Engineering study spanning software, data, electronics, communications,
+                embedded systems, machine learning, and robotics.
+              </p>
             </div>
           </article>
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="publication-heading">
-        <h2 id="publication-heading">publication</h2>
-        <div className="timeline">
           <article className="timeline-item">
             <time>2025</time>
             <div>
@@ -90,27 +99,71 @@ export default function CVPage() {
                   Navigation of Mobile Robot with Nav2 and SLAM Using LiDAR ↗
                 </a>
               </h3>
-              <p className="organization">4th ICSADL · IEEE · DOI 10.1109/ICSADL65848.2025.10933029</p>
+              <p className="organization">4th ICSADL · IEEE</p>
+              <p>
+                Peer-reviewed conference paper based on a custom autonomous robot.
+                DOI: 10.1109/ICSADL65848.2025.10933029.
+              </p>
             </div>
           </article>
         </div>
       </section>
 
       <section className="section" aria-labelledby="skills-heading">
-        <h2 id="skills-heading">selected tools</h2>
-        <div className="timeline">
-          {skills.map(([group, list]) => (
-            <div className="timeline-item" key={group}>
-              <h3>{group}</h3>
-              <p>{list}</p>
+        <div className="section-label">
+          <span>04</span>
+          <h2 id="skills-heading">Technical skills</h2>
+        </div>
+        <div className="section-content skill-list">
+          {skillGroups.map((group) => (
+            <div className="skill-row" key={group.name}>
+              <h3>{group.name}</h3>
+              <p>{group.items.join(" · ")}</p>
             </div>
           ))}
         </div>
       </section>
 
+      <section className="section" aria-labelledby="projects-heading">
+        <div className="section-label">
+          <span>05</span>
+          <h2 id="projects-heading">Selected projects</h2>
+        </div>
+        <div className="section-content compact-projects">
+          {projects.filter((project) => project.featured).map((project) => (
+            <article key={project.name}>
+              <h3>
+                {project.url ? (
+                  <a className="text-link" href={project.url} target="_blank" rel="noreferrer">
+                    {project.name} ↗
+                  </a>
+                ) : project.name}
+              </h3>
+              <p>{project.description}</p>
+              <p className="tags">{project.meta}</p>
+            </article>
+          ))}
+          <p className="section-more"><a href="/projects/" className="text-link">View all projects →</a></p>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="interests-heading">
+        <div className="section-label">
+          <span>06</span>
+          <h2 id="interests-heading">Interests</h2>
+        </div>
+        <div className="section-content prose-block">
+          <p>
+            Open-source AI, developer tools, reliable backend systems, document
+            intelligence, recommendation systems, graph neural networks, autonomous
+            robotics, technical writing, and widening access to practical engineering education.
+          </p>
+        </div>
+      </section>
+
       <footer className="footer">
         <p><a className="text-link" href="/">← home</a></p>
-        <p>Dharan, Nepal · available remotely</p>
+        <p>Last updated September 2026</p>
       </footer>
     </main>
   )

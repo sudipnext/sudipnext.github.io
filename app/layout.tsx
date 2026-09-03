@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s · Sudip Parajuli",
   },
   description:
-    "Sudip Parajuli is a software engineer from Nepal building open-source AI tools, backend systems, and useful web products.",
+    "Sudip Parajuli is a software engineer from Nepal building open-source AI products, backend systems, machine-learning applications, and robotics projects.",
   keywords: [
     "Sudip Parajuli",
     "sudipnext",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     title: "Sudip Parajuli",
-    description: "Engineer, open-source builder, and teacher.",
+    description: "Software engineer building open-source AI products and dependable systems.",
     url: "/",
     siteName: "Sudip Parajuli",
     type: "website",

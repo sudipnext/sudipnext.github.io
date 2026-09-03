@@ -1,39 +1,16 @@
-import { projects } from "@/config/portfolio"
+import { projects, type Project } from "@/config/portfolio"
 
 export const metadata = {
   title: "Projects",
-  description: "Selected projects by Sudip Parajuli.",
+  description:
+    "Open-source AI tools, backend platforms, machine-learning systems, robotics, and web products by Sudip Parajuli.",
 }
 
-const moreProjects = [
-  {
-    name: "Navigation of Mobile Robot with Nav2 and SLAM Using LiDAR",
-    url: "https://ieeexplore.ieee.org/document/10933029",
-    description:
-      "A custom differential-drive robot for autonomous mapping and navigation, developed with ROS 2, Nav2, SLAM Toolbox, LiDAR, and Arduino.",
-    meta: "Robotics · ROS 2 · IEEE",
-  },
-  {
-    name: "Height Comparison",
-    url: "https://www.heightcomparison.com/",
-    description:
-      "Backend and data pipeline for comparing the heights of celebrities and fictional characters, built from a dataset of roughly 50,000 records.",
-    meta: "Django · scraping · data",
-  },
-  {
-    name: "Lenovo Energy Management for Linux",
-    url: "https://github.com/sudipnext/lenovo_energy_management",
-    description:
-      "An unofficial Linux utility for controlling Lenovo battery and energy settings that were otherwise unavailable on the platform.",
-    meta: "Python · Linux · utility",
-  },
-  {
-    name: "CS50x Nepal Smart Attendance",
-    url: "https://github.com/CS50xNepalOfficial/AttendenceSystem",
-    description:
-      "A QR-based attendance system created for CS50x Nepal classes and events.",
-    meta: "Django · JavaScript · education",
-  },
+const categories: Project["category"][] = [
+  "AI & developer tools",
+  "Machine learning & robotics",
+  "Web products",
+  "Community & utilities",
 ]
 
 export default function ProjectsPage() {
@@ -48,10 +25,14 @@ export default function ProjectsPage() {
       </header>
 
       <div className="subpage-intro">
-        <h1>Projects</h1>
+        <p className="eyebrow">Work archive</p>
+        <h1>Projects across software, AI, and robotics.</h1>
+        <p className="lead-small">
+          Product work, open-source tools, university research, client platforms,
+          and utilities built to solve problems I encountered firsthand.
+        </p>
         <p>
-          A short list of open-source software, product work, experiments, and
-          research. More small projects live on my{" "}
+          Source code and smaller experiments are available on{" "}
           <a className="text-link" href="https://github.com/sudipnext" target="_blank" rel="noreferrer">
             GitHub ↗
           </a>
@@ -59,23 +40,33 @@ export default function ProjectsPage() {
         </p>
       </div>
 
-      <section className="project-catalog" aria-label="Project list">
-        {[...projects, ...moreProjects].map((project) => (
-          <article key={project.name}>
-            <h2>
-              <a className="text-link" href={project.url} target="_blank" rel="noreferrer">
-                {project.name} ↗
-              </a>
-            </h2>
-            <p>{project.description}</p>
-            <p className="tags">{project.meta}</p>
-          </article>
-        ))}
-      </section>
+      {categories.map((category, categoryIndex) => (
+        <section className="project-group" key={category} aria-labelledby={`category-${categoryIndex}`}>
+          <div className="section-label">
+            <span>{String(categoryIndex + 1).padStart(2, "0")}</span>
+            <h2 id={`category-${categoryIndex}`}>{category}</h2>
+          </div>
+          <div className="section-content project-catalog">
+            {projects.filter((project) => project.category === category).map((project) => (
+              <article key={project.name}>
+                <h3>
+                  {project.url ? (
+                    <a className="text-link" href={project.url} target="_blank" rel="noreferrer">
+                      {project.name} ↗
+                    </a>
+                  ) : project.name}
+                </h3>
+                <p>{project.description}</p>
+                <p className="tags">{project.meta}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
 
       <footer className="footer">
         <p><a className="text-link" href="/">← home</a></p>
-        <p>Selected work, not an exhaustive archive.</p>
+        <p>{projects.length} documented projects · more on GitHub</p>
       </footer>
     </main>
   )

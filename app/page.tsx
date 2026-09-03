@@ -1,97 +1,115 @@
 import Image from "next/image"
 
-import { experience, links, projects, writing } from "@/config/portfolio"
+import { experience, links, projects, skillGroups, writing } from "@/config/portfolio"
 
 function ArrowLink({ href, children }: { href: string; children: React.ReactNode }) {
-  const external = href.startsWith("http")
-
   return (
-    <a
-      href={href}
-      className="text-link"
-      {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
-    >
+    <a href={href} className="text-link" target="_blank" rel="noreferrer">
       {children} <span aria-hidden="true">↗</span>
     </a>
   )
 }
 
 export default function HomePage() {
+  const featuredProjects = projects.filter((project) => project.featured)
+
   return (
     <main className="page-shell">
       <header className="site-header">
         <a href="/" className="site-name">Sudip Parajuli</a>
         <nav aria-label="Primary navigation">
+          <a href="#experience">experience</a>
           <a href="/projects/">projects</a>
           <a href="/cv/">cv</a>
         </nav>
       </header>
 
-      <section className="intro" aria-labelledby="intro-title">
-        <Image
-          src="/head.jpg"
-          alt="Sudip Parajuli"
-          width={148}
-          height={148}
-          priority
-          className="portrait"
-        />
-        <div>
-          <h1 id="intro-title">Engineer, open-source builder, and teacher.</h1>
-          <p>
-            I&apos;m Sudip, a software engineer from Nepal. I build practical products
-            across backend systems, AI tooling, and the web. Right now I&apos;m working
-            on <ArrowLink href={links.presenton}>Presenton</ArrowLink>, an open-source
-            AI presentation generator and API.
+      <section className="hero" aria-labelledby="intro-title">
+        <div className="hero-copy">
+          <p className="eyebrow">Software Engineer · Nepal</p>
+          <h1 id="intro-title">Software Engineer.</h1>
+          <p className="lead">
+            I build open-source AI products, dependable backend systems, and useful
+            software from first principles to production.
           </p>
           <p>
-            I like systems that are useful, understandable, and easy to own. Away
-            from product work, I write technical notes, teach, and experiment with
-            robotics and machine learning.
+            Currently working on <ArrowLink href={links.presenton}>Presenton</ArrowLink>,
+            an open-source AI presentation platform and API. My work spans product
+            engineering, model integrations, document processing, web platforms,
+            machine learning, and robotics.
           </p>
           <div className="link-row" aria-label="Profile links">
             <ArrowLink href={links.github}>GitHub</ArrowLink>
             <ArrowLink href={links.linkedin}>LinkedIn</ArrowLink>
             <ArrowLink href={links.blog}>Blog</ArrowLink>
-            <ArrowLink href={links.medium}>Medium</ArrowLink>
             <a className="text-link" href={links.email}>Email</a>
+            <a className="text-link" href={links.resume}>Résumé</a>
           </div>
         </div>
+        <Image
+          src="/head.jpg"
+          alt="Sudip Parajuli"
+          width={176}
+          height={176}
+          priority
+          className="portrait"
+        />
       </section>
 
-      <section className="section" aria-labelledby="now-heading">
-        <h2 id="now-heading">now</h2>
-        <div className="prose-block">
+      <section className="signal-grid" aria-label="Career highlights">
+        <div><strong>700+</strong><span>Presenton contributions</span></div>
+        <div><strong>1</strong><span>IEEE publication</span></div>
+        <div><strong>60+</strong><span>AI learners mentored</span></div>
+        <div><strong>20+</strong><span>projects across disciplines</span></div>
+      </section>
+
+      <section className="section" aria-labelledby="focus-heading">
+        <div className="section-label">
+          <span>01</span>
+          <h2 id="focus-heading">Current focus</h2>
+        </div>
+        <div className="section-content prose-block">
           <p>
-            Building model-agnostic AI workflows at Presenton: document ingestion,
-            editable presentation generation, local-first model support, and reliable
-            exports. I&apos;m especially interested in the engineering layer that makes
-            different language models feel consistent to the people using them.
+            At Presenton, I work across the system that turns prompts, documents,
+            and structured data into editable presentations. That includes model-agnostic
+            orchestration, document ingestion, presentation-scoped context, rich editing,
+            high-fidelity export, desktop packaging, and self-hosted deployment.
+          </p>
+          <p>
+            I&apos;m particularly interested in the software layer between AI models and
+            people: making different models behave consistently, keeping outputs editable,
+            and building tools that remain understandable and under the user&apos;s control.
           </p>
         </div>
       </section>
 
       <section className="section" aria-labelledby="work-heading">
-        <div className="section-heading">
-          <h2 id="work-heading">selected work</h2>
-          <a href="/projects/" className="quiet-link">all projects →</a>
+        <div className="section-label">
+          <span>02</span>
+          <h2 id="work-heading">Selected work</h2>
         </div>
-        <div className="item-list">
-          {projects.map((project) => (
+        <div className="section-content item-list">
+          {featuredProjects.map((project) => (
             <article className="project-item" key={project.name}>
               <div>
-                <ArrowLink href={project.url}>{project.name}</ArrowLink>
+                {project.url ? <ArrowLink href={project.url}>{project.name}</ArrowLink> : project.name}
                 <span className="item-meta">{project.meta}</span>
               </div>
               <p>{project.description}</p>
             </article>
           ))}
+          <p className="section-more">
+            <a href="/projects/" className="text-link">View the complete project archive →</a>
+          </p>
         </div>
       </section>
 
-      <section className="section" aria-labelledby="experience-heading">
-        <h2 id="experience-heading">experience</h2>
-        <div className="timeline">
+      <section className="section" id="experience" aria-labelledby="experience-heading">
+        <div className="section-label">
+          <span>03</span>
+          <h2 id="experience-heading">Experience</h2>
+        </div>
+        <div className="section-content timeline">
           {experience.map((item) => (
             <article className="timeline-item" key={`${item.period}-${item.organization}`}>
               <time>{item.period}</time>
@@ -104,12 +122,31 @@ export default function HomePage() {
               </div>
             </article>
           ))}
+          <p className="section-more"><a href="/cv/" className="text-link">Read the full CV →</a></p>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="skills-heading">
+        <div className="section-label">
+          <span>04</span>
+          <h2 id="skills-heading">Technical range</h2>
+        </div>
+        <div className="section-content skill-list">
+          {skillGroups.map((group) => (
+            <div className="skill-row" key={group.name}>
+              <h3>{group.name}</h3>
+              <p>{group.items.join(" · ")}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       <section className="section" aria-labelledby="research-heading">
-        <h2 id="research-heading">research & education</h2>
-        <div className="timeline">
+        <div className="section-label">
+          <span>05</span>
+          <h2 id="research-heading">Research & education</h2>
+        </div>
+        <div className="section-content timeline">
           <article className="timeline-item">
             <time>2025</time>
             <div>
@@ -118,10 +155,10 @@ export default function HomePage() {
                   Navigation of Mobile Robot with Nav2 and SLAM Using LiDAR
                 </ArrowLink>
               </h3>
-              <p className="organization">IEEE · ICSADL 2025</p>
+              <p className="organization">IEEE · 4th ICSADL · DOI 10.1109/ICSADL65848.2025.10933029</p>
               <p>
-                Co-authored research on autonomous navigation with ROS 2, Nav2,
-                SLAM, LiDAR, and a custom-built differential-drive robot.
+                Co-authored and built the robotics system behind a study of autonomous
+                navigation with ROS 2, Nav2, SLAM, LiDAR, and differential-drive control.
               </p>
             </div>
           </article>
@@ -130,33 +167,36 @@ export default function HomePage() {
             <div>
               <h3>B.E. in Electronics, Communication and Information Engineering</h3>
               <p className="organization">Tribhuvan University · IOE, Purwanchal Campus</p>
+              <p>
+                Combined software engineering with embedded systems, communication,
+                data science, machine learning, and robotics.
+              </p>
             </div>
           </article>
         </div>
       </section>
 
       <section className="section" aria-labelledby="writing-heading">
-        <div className="section-heading">
-          <h2 id="writing-heading">writing</h2>
-          <ArrowLink href={links.blog}>all posts</ArrowLink>
+        <div className="section-label">
+          <span>06</span>
+          <h2 id="writing-heading">Writing</h2>
         </div>
-        <ul className="writing-list">
-          {writing.map((post) => (
-            <li key={post.title}>
-              <time>{post.date}</time>
-              <ArrowLink href={post.url}>{post.title}</ArrowLink>
-            </li>
-          ))}
-        </ul>
+        <div className="section-content">
+          <ul className="writing-list">
+            {writing.map((post) => (
+              <li key={post.title}>
+                <time>{post.date}</time>
+                <ArrowLink href={post.url}>{post.title}</ArrowLink>
+              </li>
+            ))}
+          </ul>
+          <p className="section-more"><ArrowLink href={links.blog}>Browse all articles</ArrowLink></p>
+        </div>
       </section>
 
       <footer className="footer">
-        <p>
-          <a className="text-link" href={links.resume}>resume</a>
-          <span aria-hidden="true"> · </span>
-          <a className="text-link" href={links.email}>email</a>
-        </p>
-        <p>Last updated September 2026.</p>
+        <p>Open to ambitious product, engineering, research, and graduate-study opportunities.</p>
+        <p><a className="text-link" href={links.email}>info@parajulisudip.com.np</a></p>
       </footer>
     </main>
   )
