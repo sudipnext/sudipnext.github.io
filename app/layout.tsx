@@ -27,7 +27,6 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "Sudip Parajuli",
     type: "website",
-    images: [{ url: "/head.jpg", width: 640, height: 640, alt: "Sudip Parajuli" }],
   },
 }
 

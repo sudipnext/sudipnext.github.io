@@ -1,17 +1,10 @@
-import { projects, type Project } from "@/config/portfolio"
+import { links, projects } from "@/config/portfolio"
 
 export const metadata = {
   title: "Projects",
   description:
-    "Open-source AI tools, backend platforms, machine-learning systems, robotics, and web products by Sudip Parajuli.",
+    "Selected open-source AI, developer tooling, machine-learning, and robotics work by Sudip Parajuli.",
 }
-
-const categories: Project["category"][] = [
-  "AI & developer tools",
-  "Machine learning & robotics",
-  "Web products",
-  "Community & utilities",
-]
 
 export default function ProjectsPage() {
   return (
@@ -25,48 +18,44 @@ export default function ProjectsPage() {
       </header>
 
       <div className="subpage-intro">
-        <p className="eyebrow">Work archive</p>
-        <h1>Projects across software, AI, and robotics.</h1>
+        <p className="eyebrow">Selected work</p>
+        <h1>Four projects that define my work.</h1>
         <p className="lead-small">
-          Product work, open-source tools, university research, client platforms,
-          and utilities built to solve problems I encountered firsthand.
+          A focused selection spanning open-source AI, developer tools, graph-based
+          recommendation systems, and autonomous robotics.
         </p>
         <p>
-          Source code and smaller experiments are available on{" "}
-          <a className="text-link" href="https://github.com/sudipnext" target="_blank" rel="noreferrer">
+          Smaller projects and experiments remain available on{" "}
+          <a className="text-link" href={links.github} target="_blank" rel="noreferrer">
             GitHub ↗
           </a>
           .
         </p>
       </div>
 
-      {categories.map((category, categoryIndex) => (
-        <section className="project-group" key={category} aria-labelledby={`category-${categoryIndex}`}>
-          <div className="section-label">
-            <span>{String(categoryIndex + 1).padStart(2, "0")}</span>
-            <h2 id={`category-${categoryIndex}`}>{category}</h2>
-          </div>
-          <div className="section-content project-catalog">
-            {projects.filter((project) => project.category === category).map((project) => (
-              <article key={project.name}>
-                <h3>
-                  {project.url ? (
-                    <a className="text-link" href={project.url} target="_blank" rel="noreferrer">
-                      {project.name} ↗
-                    </a>
-                  ) : project.name}
-                </h3>
-                <p>{project.description}</p>
-                <p className="tags">{project.meta}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-      ))}
+      <section className="project-group" aria-labelledby="selected-projects">
+        <div className="section-label">
+          <span>01</span>
+          <h2 id="selected-projects">Flagship projects</h2>
+        </div>
+        <div className="section-content project-catalog">
+          {projects.map((project) => (
+            <article key={project.name}>
+              <h3>
+                <a className="text-link" href={project.url} target="_blank" rel="noreferrer">
+                  {project.name} ↗
+                </a>
+              </h3>
+              <p>{project.description}</p>
+              <p className="tags">{project.meta}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <footer className="footer">
         <p><a className="text-link" href="/">← home</a></p>
-        <p>{projects.length} documented projects · more on GitHub</p>
+        <p>4 selected projects · more on GitHub</p>
       </footer>
     </main>
   )

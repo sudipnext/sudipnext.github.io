@@ -30,9 +30,6 @@ export default function CVPage() {
           <a className="text-link" href={links.github} target="_blank" rel="noreferrer">GitHub ↗</a>
           <a className="text-link" href={links.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
         </div>
-        <p className="cv-actions">
-          <a className="download-link" href={links.resume} download>Download PDF résumé ↓</a>
-        </p>
       </div>
 
       <section className="section" aria-labelledby="summary-heading">
@@ -66,7 +63,13 @@ export default function CVPage() {
               <time>{item.period}</time>
               <div>
                 <h3>{item.title}</h3>
-                <p className="organization">{item.organization}</p>
+                <p className="organization">
+                  {item.url ? (
+                    <a className="text-link" href={item.url} target="_blank" rel="noreferrer">
+                      {item.organization} ↗
+                    </a>
+                  ) : item.organization}
+                </p>
                 <p>{item.description}</p>
               </div>
             </article>
@@ -130,7 +133,7 @@ export default function CVPage() {
           <h2 id="projects-heading">Selected projects</h2>
         </div>
         <div className="section-content compact-projects">
-          {projects.filter((project) => project.featured).map((project) => (
+          {projects.map((project) => (
             <article key={project.name}>
               <h3>
                 {project.url ? (
@@ -143,7 +146,7 @@ export default function CVPage() {
               <p className="tags">{project.meta}</p>
             </article>
           ))}
-          <p className="section-more"><a href="/projects/" className="text-link">View all projects →</a></p>
+          <p className="section-more"><a href="/projects/" className="text-link">View selected projects →</a></p>
         </div>
       </section>
 

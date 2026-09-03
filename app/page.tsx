@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 import { experience, links, projects, skillGroups, writing } from "@/config/portfolio"
 
 function ArrowLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -11,8 +9,6 @@ function ArrowLink({ href, children }: { href: string; children: React.ReactNode
 }
 
 export default function HomePage() {
-  const featuredProjects = projects.filter((project) => project.featured)
-
   return (
     <main className="page-shell">
       <header className="site-header">
@@ -43,17 +39,8 @@ export default function HomePage() {
             <ArrowLink href={links.linkedin}>LinkedIn</ArrowLink>
             <ArrowLink href={links.blog}>Blog</ArrowLink>
             <a className="text-link" href={links.email}>Email</a>
-            <a className="text-link" href={links.resume}>Résumé</a>
           </div>
         </div>
-        <Image
-          src="/head.jpg"
-          alt="Sudip Parajuli"
-          width={176}
-          height={176}
-          priority
-          className="portrait"
-        />
       </section>
 
       <section className="section" aria-labelledby="focus-heading">
@@ -82,7 +69,7 @@ export default function HomePage() {
           <h2 id="work-heading">Selected work</h2>
         </div>
         <div className="section-content item-list">
-          {featuredProjects.map((project) => (
+          {projects.map((project) => (
             <article className="project-item" key={project.name}>
               <div>
                 {project.url ? <ArrowLink href={project.url}>{project.name}</ArrowLink> : project.name}
@@ -92,7 +79,7 @@ export default function HomePage() {
             </article>
           ))}
           <p className="section-more">
-            <a href="/projects/" className="text-link">View the complete project archive →</a>
+            <a href="/projects/" className="text-link">View the four flagship projects →</a>
           </p>
         </div>
       </section>
