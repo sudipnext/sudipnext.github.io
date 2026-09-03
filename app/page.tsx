@@ -73,7 +73,10 @@ export default function HomePage() {
           {projects.map((project) => (
             <article className="project-item" key={project.name}>
               <div>
-                {project.url ? <ArrowLink href={project.url}>{project.name}</ArrowLink> : project.name}
+                <ArrowLink href={project.url}>{project.name}</ArrowLink>
+                {project.secondaryLink ? (
+                  <> · <ArrowLink href={project.secondaryLink.url}>{project.secondaryLink.label}</ArrowLink></>
+                ) : null}
                 <span className="item-meta">{project.meta}</span>
               </div>
               <p>{project.description}</p>

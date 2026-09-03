@@ -137,11 +137,14 @@ export default function CVPage() {
           {projects.map((project) => (
             <article key={project.name}>
               <h3>
-                {project.url ? (
-                  <a className="text-link" href={project.url} target="_blank" rel="noreferrer">
-                    {project.name} ↗
-                  </a>
-                ) : project.name}
+                <a className="text-link" href={project.url} target="_blank" rel="noreferrer">
+                  {project.name} ↗
+                </a>
+                {project.secondaryLink ? (
+                  <> · <a className="text-link" href={project.secondaryLink.url} target="_blank" rel="noreferrer">
+                    {project.secondaryLink.label} ↗
+                  </a></>
+                ) : null}
               </h3>
               <p>{project.description}</p>
               <p className="tags">{project.meta}</p>

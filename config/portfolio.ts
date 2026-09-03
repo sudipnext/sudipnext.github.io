@@ -13,6 +13,10 @@ export type Project = {
   url: string
   description: string
   meta: string
+  secondaryLink?: {
+    label: string
+    url: string
+  }
 }
 
 export const projects: Project[] = [
@@ -24,11 +28,15 @@ export const projects: Project[] = [
     meta: "TypeScript · Next.js · Python · LLMs · Docker",
   },
   {
-    name: "docx2everything",
-    url: "https://github.com/sudipnext/docx2everything",
+    name: "llmai",
+    url: "https://github.com/presenton/llmai",
     description:
-      "A dependency-free Python package that extracts Markdown, text, tables, images, footnotes, comments, and formatting from DOCX files.",
-    meta: "Python · PyPI · document processing",
+      "A provider-neutral Python library that gives OpenAI, Anthropic, Gemini, Bedrock, DeepSeek, and other LLM APIs a shared interface for messages, tools, schemas, streaming, and responses.",
+    meta: "Python · multi-provider LLMs · sync/async · structured output",
+    secondaryLink: {
+      label: "PyPI",
+      url: "https://pypi.org/project/llmai/",
+    },
   },
   {
     name: "nexREC",
