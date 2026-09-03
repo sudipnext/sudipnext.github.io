@@ -1,83 +1,84 @@
-import Image from "next/image"
-import { ExternalLink, Github } from "lucide-react"
+import Link from "next/link"
 
-import { siteConfig } from "@/config/site"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import TitleImage from "@/components/ui/title-image"
+import { projects } from "@/config/portfolio"
 
 export const metadata = {
   title: "Projects",
-  description: "Check out my latest projects and work",
+  description: "Selected projects by Sudip Parajuli.",
 }
+
+const moreProjects = [
+  {
+    name: "Navigation of Mobile Robot with Nav2 and SLAM Using LiDAR",
+    url: "https://ieeexplore.ieee.org/document/10933029",
+    description:
+      "A custom differential-drive robot for autonomous mapping and navigation, developed with ROS 2, Nav2, SLAM Toolbox, LiDAR, and Arduino.",
+    meta: "Robotics · ROS 2 · IEEE",
+  },
+  {
+    name: "Height Comparison",
+    url: "https://www.heightcomparison.com/",
+    description:
+      "Backend and data pipeline for comparing the heights of celebrities and fictional characters, built from a dataset of roughly 50,000 records.",
+    meta: "Django · scraping · data",
+  },
+  {
+    name: "Lenovo Energy Management for Linux",
+    url: "https://github.com/sudipnext/lenovo_energy_management",
+    description:
+      "An unofficial Linux utility for controlling Lenovo battery and energy settings that were otherwise unavailable on the platform.",
+    meta: "Python · Linux · utility",
+  },
+  {
+    name: "CS50x Nepal Smart Attendance",
+    url: "https://github.com/CS50xNepalOfficial/AttendenceSystem",
+    description:
+      "A QR-based attendance system created for CS50x Nepal classes and events.",
+    meta: "Django · JavaScript · education",
+  },
+]
 
 export default function ProjectsPage() {
   return (
-    <div className="container mx-auto px-4 py-16 md:py-24">
-      <h1 className="text-4xl font-bold mb-8">My Projects</h1>
-      <p className="text-xl text-muted-foreground mb-12 max-w-3xl">
-        Here are some of the projects I've worked on. Each project represents my skills and passion for building
-        innovative solutions. You can find other projects on my GitHub.
-      </p>
+    <main className="page-shell">
+      <header className="site-header">
+        <Link href="/" className="site-name">Sudip Parajuli</Link>
+        <nav aria-label="Primary navigation">
+          <Link href="/">home</Link>
+          <Link href="/cv">cv</Link>
+        </nav>
+      </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {siteConfig.projects.map((project) => (
-          <div
-            key={project.title}
-            className="group flex flex-col overflow-hidden rounded-lg border bg-card transition-all hover:shadow-md"
-          >
-            <div className="aspect-video w-full overflow-hidden">
-              {project.image ? (
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={500}
-                  height={300}
-                  className="h-full w-full object-cover transition-transform group-hover:scale-105"
-                />
-              ) : (
-                <TitleImage title={project.title} className="group-hover:opacity-90 transition-opacity" />
-              )}
-            </div>
-            <div className="flex flex-1 flex-col p-6">
-              <h3 className="font-semibold text-xl mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-              <p className="text-muted-foreground mb-4 flex-1">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map((tag) => (
-                  <Badge key={tag} variant="secondary" className="px-2 py-0.5">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
-              <div className="flex gap-3 mt-auto">
-                {project.github && (
-                  <Button size="sm" variant="outline" asChild>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" />
-                      Code
-                    </a>
-                  </Button>
-                )}
-                {project.link && (
-                  <Button size="sm" asChild>
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Demo
-                    </a>
-                  </Button>
-                )}
-                {project.paper && (
-                  <Button size="sm" variant="outline" asChild>
-                    <a href={project.paper} target="_blank" rel="noopener noreferrer">
-                      <span className="mr-2">Paper</span>
-                    </a>
-                  </Button>
-                )}
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className="subpage-intro">
+        <h1>Projects</h1>
+        <p>
+          A short list of open-source software, product work, experiments, and
+          research. More small projects live on my{" "}
+          <a className="text-link" href="https://github.com/sudipnext" target="_blank" rel="noreferrer">
+            GitHub ↗
+          </a>
+          .
+        </p>
       </div>
-    </div>
+
+      <section className="project-catalog" aria-label="Project list">
+        {[...projects, ...moreProjects].map((project) => (
+          <article key={project.name}>
+            <h2>
+              <a className="text-link" href={project.url} target="_blank" rel="noreferrer">
+                {project.name} ↗
+              </a>
+            </h2>
+            <p>{project.description}</p>
+            <p className="tags">{project.meta}</p>
+          </article>
+        ))}
+      </section>
+
+      <footer className="footer">
+        <p><Link className="text-link" href="/">← home</Link></p>
+        <p>Selected work, not an exhaustive archive.</p>
+      </footer>
+    </main>
   )
 }

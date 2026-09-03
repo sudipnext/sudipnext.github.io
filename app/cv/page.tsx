@@ -1,275 +1,119 @@
-import { Download } from "lucide-react"
-import { siteConfig } from "@/config/site"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import Link from "next/link"
+
+import { experience, links } from "@/config/portfolio"
 
 export const metadata = {
   title: "CV",
-  description: "My professional resume and experience",
+  description: "Experience, education, and technical background of Sudip Parajuli.",
 }
+
+const skills = [
+  ["Backend", "Python, Django, Django REST Framework, FastAPI, Celery, Node.js"],
+  ["Frontend", "TypeScript, React, Next.js, Remix, Tailwind CSS"],
+  ["AI & data", "PyTorch, PyTorch Geometric, pandas, NumPy, Milvus, recommendation systems"],
+  ["Infrastructure", "PostgreSQL, Redis, Docker, AWS, GitHub Actions, Nginx"],
+  ["Other", "ROS 2, Nav2, SLAM, web scraping, document processing"],
+]
 
 export default function CVPage() {
   return (
-    <div className="container mx-auto px-4 py-16 md:py-24">
-      {/* Header and Download button - existing code */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-        <div>
-          <h1 className="text-4xl font-bold">Curriculum Vitae</h1>
-          <p className="text-muted-foreground mt-2">My professional experience and skills</p>
-        </div>
-        <Button asChild>
-          <a href="/Sudip Parajuli.pdf" download>
-            <Download className="mr-2 h-4 w-4" />
-            Download CV
-          </a>
-        </Button>
+    <main className="page-shell">
+      <header className="site-header">
+        <Link href="/" className="site-name">Sudip Parajuli</Link>
+        <nav aria-label="Primary navigation">
+          <Link href="/">home</Link>
+          <Link href="/projects">projects</Link>
+        </nav>
+      </header>
+
+      <div className="subpage-intro">
+        <h1>Curriculum vitae</h1>
+        <p>
+          Software engineer working across backend systems, product engineering,
+          open-source AI tools, and applied machine learning.
+        </p>
+        <p className="cv-actions">
+          <a className="text-link" href={links.resume} download>download PDF ↓</a>
+          <span aria-hidden="true"> · </span>
+          <a className="text-link" href={links.email}>email</a>
+          <span aria-hidden="true"> · </span>
+          <a className="text-link" href={links.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left column - Personal info and skills */}
-        <div className="space-y-8">
-          {/* Personal Info - existing code with additions */}
-          <div className="rounded-lg border bg-card p-6">
-            <h2 className="text-xl font-semibold mb-4">Personal Information</h2>
-            <div className="space-y-3">
+      <section className="section" aria-labelledby="experience-heading">
+        <h2 id="experience-heading">experience</h2>
+        <div className="timeline">
+          {experience.map((item) => (
+            <article className="timeline-item" key={`${item.period}-${item.organization}`}>
+              <time>{item.period}</time>
               <div>
-                <h3 className="text-sm font-medium text-muted-foreground">Name</h3>
-                <p>{siteConfig.cv.personalInfo.name}</p>
+                <h3>{item.title}</h3>
+                <p className="organization">{item.organization}</p>
+                <p>{item.description}</p>
               </div>
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground">Location</h3>
-                <p>{siteConfig.cv.personalInfo.location}</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground">Phone</h3>
-                <p>{siteConfig.cv.personalInfo.phone}</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground">Email</h3>
-                <p>{siteConfig.cv.personalInfo.email}</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground">Website</h3>
-                <p>{siteConfig.cv.personalInfo.website}</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground">Status</h3>
-                <Badge className="mt-1 bg-green-100 text-green-800 hover:bg-green-200 dark:bg-green-900 dark:text-green-100 dark:hover:bg-green-800">
-                  {siteConfig.cv.personalInfo.status}
-                </Badge>
-              </div>
+            </article>
+          ))}
+          <article className="timeline-item">
+            <time>2021 — 2025</time>
+            <div>
+              <h3>Data fellow</h3>
+              <p className="organization">Code for Nepal</p>
+              <p>
+                Studied and applied Python, SQL, data analysis, visualization,
+                machine learning, version control, and cloud fundamentals.
+              </p>
             </div>
-          </div>
-
-          {/* Skills - existing code */}
-          <div className="rounded-lg border bg-card p-6">
-            <h2 className="text-xl font-semibold mb-4">Skills</h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-2">Languages</h3>
-                <div className="flex flex-wrap gap-2">
-                  {siteConfig.skills.languages.map((skill) => (
-                    <Badge key={skill} variant="outline">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-2">Frameworks</h3>
-                <div className="flex flex-wrap gap-2">
-                  {siteConfig.skills.frameworks.map((skill) => (
-                    <Badge key={skill} variant="outline">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-2">Data Science</h3>
-                <div className="flex flex-wrap gap-2">
-                  {siteConfig.skills.datascience.map((skill) => (
-                    <Badge key={skill} variant="outline">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-2">Web Scraping</h3>
-                <div className="flex flex-wrap gap-2">
-                  {siteConfig.skills.scraping.map((skill) => (
-                    <Badge key={skill} variant="outline">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Detailed Skills - new section */}
-          <div className="rounded-lg border bg-card p-6">
-            <h2 className="text-xl font-semibold mb-4">Detailed Skills</h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-2">Programming Languages</h3>
-                <div className="flex flex-wrap gap-2">
-                  {siteConfig.cv.detailedSkills.programmingLanguages.map((skill) => (
-                    <Badge key={skill} variant="outline">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-2">Tools & Frameworks</h3>
-                <div className="flex flex-wrap gap-2">
-                  {siteConfig.cv.detailedSkills.toolsAndFrameworks.map((skill) => (
-                    <Badge key={skill} variant="outline">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-2">DevOps & Cloud</h3>
-                <div className="flex flex-wrap gap-2">
-                  {siteConfig.cv.detailedSkills.devopsAndCloud.map((skill) => (
-                    <Badge key={skill} variant="outline">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-2">Web Scraping & Automation</h3>
-                <div className="flex flex-wrap gap-2">
-                  {siteConfig.cv.detailedSkills.webScrapingAndAutomation.map((skill) => (
-                    <Badge key={skill} variant="outline">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-medium text-muted-foreground mb-2">Other Tools</h3>
-                <div className="flex flex-wrap gap-2">
-                  {siteConfig.cv.detailedSkills.otherTools.map((skill) => (
-                    <Badge key={skill} variant="outline">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Interests - new section */}
-          <div className="rounded-lg border bg-card p-6">
-            <h2 className="text-xl font-semibold mb-4">Interests</h2>
-            <p className="text-sm">{siteConfig.cv.interests}</p>
-          </div>
+          </article>
         </div>
+      </section>
 
-        {/* Right column - Experience, Education, Publications, and Major Projects */}
-        <div className="lg:col-span-2 space-y-8">
-          {/* Experience - existing code */}
-          {siteConfig.cv.experience.map((org, index) => (
-            <div key={index} className="rounded-lg border bg-card p-6">
-              <h2 className="text-xl font-semibold mb-6">{org.organization}</h2>
+      <section className="section" aria-labelledby="education-heading">
+        <h2 id="education-heading">education</h2>
+        <div className="timeline">
+          <article className="timeline-item">
+            <time>2021 — 2025</time>
+            <div>
+              <h3>B.E. in Electronics, Communication and Information Engineering</h3>
+              <p className="organization">Tribhuvan University · IOE, Purwanchal Campus</p>
+            </div>
+          </article>
+        </div>
+      </section>
 
-              <div className="space-y-8">
-                {org.positions.map((position, posIndex) => (
-                  <div key={posIndex} className="relative pl-8 pb-8 border-l border-muted last:border-0 last:pb-0">
-                    <div className="absolute left-0 top-0 -translate-x-1/2 h-4 w-4 rounded-full bg-primary"></div>
-                    <div className="space-y-2">
-                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
-                        <h3 className="font-medium">{position.title}</h3>
-                        <Badge variant="outline" className="w-fit">
-                          {position.period}
-                        </Badge>
-                      </div>
-                      <p className="text-muted-foreground text-sm">{position.company}</p>
-                      <p className="text-sm">{position.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+      <section className="section" aria-labelledby="publication-heading">
+        <h2 id="publication-heading">publication</h2>
+        <div className="timeline">
+          <article className="timeline-item">
+            <time>2025</time>
+            <div>
+              <h3>
+                <a className="text-link" href="https://ieeexplore.ieee.org/document/10933029" target="_blank" rel="noreferrer">
+                  Navigation of Mobile Robot with Nav2 and SLAM Using LiDAR ↗
+                </a>
+              </h3>
+              <p className="organization">4th ICSADL · IEEE · DOI 10.1109/ICSADL65848.2025.10933029</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">selected tools</h2>
+        <div className="timeline">
+          {skills.map(([group, list]) => (
+            <div className="timeline-item" key={group}>
+              <h3>{group}</h3>
+              <p>{list}</p>
             </div>
           ))}
-
-          {/* Education - existing code */}
-          <div className="rounded-lg border bg-card p-6">
-            <h2 className="text-xl font-semibold mb-6">Education</h2>
-
-            <div className="space-y-8">
-              {siteConfig.cv.education.map((edu, index) => (
-                <div key={index} className="relative pl-8 pb-8 border-l border-muted last:border-0 last:pb-0">
-                  <div className="absolute left-0 top-0 -translate-x-1/2 h-4 w-4 rounded-full bg-primary"></div>
-                  <div className="space-y-2">
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
-                      <h3 className="font-medium">{edu.degree}</h3>
-                      <Badge variant="outline" className="w-fit">
-                        {edu.period}
-                      </Badge>
-                    </div>
-                    <p className="text-muted-foreground text-sm">{edu.institution}</p>
-                    <p className="text-sm">{edu.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Publications - new section */}
-          <div className="rounded-lg border bg-card p-6">
-            <h2 className="text-xl font-semibold mb-6">Publications</h2>
-
-            <div className="space-y-8">
-              {siteConfig.cv.publications.map((pub, index) => (
-                <div key={index} className="relative pl-8 pb-8 border-l border-muted last:border-0 last:pb-0">
-                  <div className="absolute left-0 top-0 -translate-x-1/2 h-4 w-4 rounded-full bg-primary"></div>
-                  <div className="space-y-2">
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
-                      <h3 className="font-medium">{pub.title}</h3>
-                      <Badge variant="outline" className="w-fit">
-                        {pub.year}
-                      </Badge>
-                    </div>
-                    <p className="text-muted-foreground text-sm">{pub.conference}</p>
-                    <p className="text-sm">Status: {pub.status}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Major Projects - new section */}
-          <div className="rounded-lg border bg-card p-6">
-            <h2 className="text-xl font-semibold mb-6">Major Projects</h2>
-
-            <div className="space-y-8">
-              {siteConfig.cv.majorProjects.map((project, index) => (
-                <div key={index} className="relative pl-8 pb-8 border-l border-muted last:border-0 last:pb-0">
-                  <div className="absolute left-0 top-0 -translate-x-1/2 h-4 w-4 rounded-full bg-primary"></div>
-                  <div className="space-y-2">
-                    <h3 className="font-medium">{project.title}</h3>
-                    <p className="text-sm">{project.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <footer className="footer">
+        <p><Link className="text-link" href="/">← home</Link></p>
+        <p>Dharan, Nepal · available remotely</p>
+      </footer>
+    </main>
   )
 }
