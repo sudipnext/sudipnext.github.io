@@ -6,7 +6,7 @@ export const siteConfig = {
   name: "Sudip Parajuli",
   nickname: "sudipnext",
   description:
-    "I'm Sudip Parajuli from Dharan, Nepal. I work on Data Science, Web Scraping, Robotics, and Web Development using Python and JavaScript. I help build human-centric products with positive impact.",
+    "I'm Sudip Parajuli from Kathmandu, Nepal. I work on Data Science, Web Scraping, Robotics, and Web Development using Python and JavaScript. I help build human-centric products with positive impact.",
   status: "Open For Work",
   profileImage: "/head.jpg",
 
@@ -29,7 +29,7 @@ export const siteConfig = {
     },
     {
       name: "Email",
-      url: "mailto:info@parajulisudip.com.np",
+      url: "mailto:coc42060@gmail.com",
       icon: Mail,
     },
   ],
@@ -246,9 +246,9 @@ export const siteConfig = {
   cv: {
     personalInfo: {
       name: "Sudip Parajuli",
-      location: "Dharan, Nepal",
+      location: "Kathmandu, Nepal",
       email: "coc42060@gmail.com",
-      alternateEmail: "info@parajulisudip.com.np",
+      alternateEmail: "coc42060@gmail.com",
       phone: "(+977) 9811359372",
       website: "parajulisudip.com.np",
       status: "Open For Work"
@@ -274,13 +274,13 @@ export const siteConfig = {
     
     experience: [
       {
-        organization: "Exploreden Australia",
+        organization: "Exploreden",
         positions: [
           {
             title: "Full Stack Engineer (Remote)",
             period: "2024 Aug - Present",
-            company: "Exploreden Australia",
-            description: "Developed and maintained a comprehensive travel booking platform using Django and React, enhancing user experience and functionality. Integrated third-party APIs for hotel bookings, flight searches, and payment gateways, ensuring seamless transactions. Implemented responsive design principles to optimize the platform for various devices, improving accessibility and user engagement. Collaborated and Led the technical team to gather requirements, design features, and deploy updates."
+            company: "Exploreden",
+            description: "Developed and maintained a comprehensive travel booking platform using Django and React, enhancing user experience and functionality. Integrated third-party APIs for hotel bookings, flight searches, and payment gateways, ensuring seamless transactions. Implemented responsive design principles to optimize the platform for various devices, improving accessibility and user engagement. Collaborated with the technical team to gather requirements, design features, and deploy updates."
           }
         ]
       },
@@ -291,13 +291,13 @@ export const siteConfig = {
             title: "Backend Engineer",
             period: "2024 Sept - 2024 Aug",
             company: "Kinu Tech Pvt. Ltd",
-            description: "Proficient in Basic AWS Services like EC2, Lambda, CDK, Beanstalk, Lightsail etc. Learned CI/CD techniques with GitHub Actions. Major Experience Working with technologies like Django, Django REST Framework, React, Next.js. Worked on an international travel booking application. Created Django backend, implemented multiple APIs like Hotelbeds, Ratehawk. Implemented Recommendation Systems using Gorse. Implemented Stripe for Payment Gateway. Optimized application performance by implementing caching strategies and microservices, leveraging Celery for task queuing, AWS Lambda for scheduled tasks, and AWS CDK with ECR for efficient deployment which improved system performance by 3 times. Implemented Google OAuth2 along with robust login/signup platform."
+            description: "Learned backend development with Django and Django REST Framework through project work and mentorship. Gained experience with API integrations, PostgreSQL, caching, Celery background tasks, and cloud deployment using AWS tools such as Lambda, CDK, and ECR. Learned CI/CD with GitHub Actions and explored frontend development with React and Next.js."
           },
           {
             title: "Junior Backend Engineer",
             period: "March 2023 - Feb 2024",
             company: "Kinu Tech Pvt. Ltd",
-            description: "Worked on API integrations and backend optimizations. Built a Height Prediction model along with entire backend system of https://www.heightcomparison.com. Scraped thousands of websites to gather almost 50k celebs, anime data along with necessary information. Learned software engineering best practices through hands-on mentorship. Contributed to the development of a Pharmacy Dashboard in Nuxt3. Contributed on django admin customization with custom themes and functionality. Worked with Django, Django REST Framework, Django Admin Optimization, PostgreSQL, Nuxt.js, TypeScript, bs4, Selenium, MechanicalSoup, Scrapy, Jupyter Notebook, NumPy, Pandas, Large Data Handling, Data Cleaning, TailwindCSS, and others."
+            description: "Learned Python, Django, API integration, and web scraping with BeautifulSoup, Scrapy, and Selenium. Worked with data cleaning and processing using pandas and NumPy, PostgreSQL, and Django admin customization. Explored Nuxt and TypeScript while contributing to projects and learning software engineering practices through mentorship."
           }
         ]
       },

@@ -1,39 +1,23 @@
 import type { Metadata } from "next"
+import { StructuredData } from "@/components/structured-data"
+import { profile } from "@/config/portfolio"
+import { identitySchema, pageMetadata, siteDescription } from "@/lib/seo"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://parajulisudip.com.np"),
-  title: {
-    default: "Sudip Parajuli",
-    template: "%s · Sudip Parajuli",
-  },
-  description:
-    "Sudip Parajuli is a software engineer from Nepal building open-source AI products, backend systems, machine-learning applications, and robotics projects.",
-  keywords: [
-    "Sudip Parajuli",
-    "sudipnext",
-    "software engineer Nepal",
-    "Presenton",
-    "open source",
-    "Python",
-    "Django",
-    "AI",
-  ],
-  authors: [{ name: "Sudip Parajuli", url: "https://parajulisudip.com.np" }],
-  alternates: { canonical: "/" },
-  openGraph: {
-    title: "Sudip Parajuli",
-    description: "Software engineer building open-source AI products and dependable systems.",
-    url: "/",
-    siteName: "Sudip Parajuli",
-    type: "website",
-  },
+  metadataBase: new URL(profile.siteUrl),
+  ...pageMetadata("Sudip Parajuli (sudipnext) | Software Engineer", siteDescription, "/"),
+  authors: [{ name: profile.name, url: profile.siteUrl }],
+  creator: profile.name,
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <StructuredData data={identitySchema} />
+        {children}
+      </body>
     </html>
   )
 }

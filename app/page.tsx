@@ -1,3 +1,6 @@
+import { StructuredData } from "@/components/structured-data"
+import { profilePageSchema } from "@/lib/seo"
+import { WorkDetails } from "@/components/work-details"
 import { experience, links, projects, skillGroups, writing } from "@/config/portfolio"
 
 function ArrowLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -11,86 +14,46 @@ function ArrowLink({ href, children }: { href: string; children: React.ReactNode
 export default function HomePage() {
   return (
     <main className="page-shell">
+      <StructuredData data={profilePageSchema("/", "Sudip Parajuli (sudipnext)")} />
       <header className="site-header">
         <a href="/" className="site-name">Sudip Parajuli</a>
         <nav aria-label="Primary navigation">
           <a href="#experience">experience</a>
           <a href="/projects/">projects</a>
+          <a href="#writing">blog</a>
           <a href="/cv/">cv</a>
         </nav>
       </header>
 
       <section className="hero" aria-labelledby="intro-title">
         <div className="hero-copy">
-          <p className="eyebrow">Software Engineer · Nepal</p>
-          <h1 id="intro-title">Software Engineer.</h1>
-          <p className="lead">
-            I build open-source AI products, dependable backend systems, and useful
-            software from first principles to production.
+          <p className="eyebrow">Kathmandu, Nepal</p>
+          <h1 id="intro-title">Hi, I’m Sudip.</h1>
+          <p className="lead">Software Engineer &amp; Open Source Lead</p>
+          <p>
+            I’m Sudip Parajuli, and I go by <ArrowLink href={links.github}>sudipnext</ArrowLink> online.
+            I work at <ArrowLink href={links.presenton}>Presenton</ArrowLink>, where I
+            develop open-source software, build enterprise features, and maintain
+            the infrastructure and desktop app.
           </p>
           <p>
-            Currently working on <ArrowLink href={links.presenton}>Presenton</ArrowLink>,
-            an open-source AI presentation platform and API. My work spans product
-            engineering, model integrations, document processing, web platforms,
-            machine learning, and robotics.
+            Previously, I worked at Exploreden and helped build its hotel-booking
+            platform. My other work includes recommendation systems, robotics, and
+            teaching. Here’s a little about what I’ve worked on.
           </p>
           <div className="link-row" aria-label="Profile links">
             <ArrowLink href={links.github}>GitHub</ArrowLink>
             <ArrowLink href={links.linkedin}>LinkedIn</ArrowLink>
             <ArrowLink href={links.scholar}>Google Scholar</ArrowLink>
             <ArrowLink href={links.blog}>Blog</ArrowLink>
+            <ArrowLink href={links.youtube}>YouTube</ArrowLink>
             <a className="text-link" href={links.email}>Email</a>
           </div>
         </div>
       </section>
 
-      <section className="section" aria-labelledby="focus-heading">
-        <div className="section-label">
-          <span>01</span>
-          <h2 id="focus-heading">Current focus</h2>
-        </div>
-        <div className="section-content prose-block">
-          <p>
-            At Presenton, I work across the system that turns prompts, documents,
-            and structured data into editable presentations. That includes model-agnostic
-            orchestration, document ingestion, presentation-scoped context, rich editing,
-            high-fidelity export, desktop packaging, and self-hosted deployment.
-          </p>
-          <p>
-            I&apos;m particularly interested in the software layer between AI models and
-            people: making different models behave consistently, keeping outputs editable,
-            and building tools that remain understandable and under the user&apos;s control.
-          </p>
-        </div>
-      </section>
-
-      <section className="section" aria-labelledby="work-heading">
-        <div className="section-label">
-          <span>02</span>
-          <h2 id="work-heading">Selected work</h2>
-        </div>
-        <div className="section-content item-list">
-          {projects.map((project) => (
-            <article className="project-item" key={project.name}>
-              <div>
-                <ArrowLink href={project.url}>{project.name}</ArrowLink>
-                {project.secondaryLink ? (
-                  <> · <ArrowLink href={project.secondaryLink.url}>{project.secondaryLink.label}</ArrowLink></>
-                ) : null}
-                <span className="item-meta">{project.meta}</span>
-              </div>
-              <p>{project.description}</p>
-            </article>
-          ))}
-          <p className="section-more">
-            <a href="/projects/" className="text-link">View the four flagship projects →</a>
-          </p>
-        </div>
-      </section>
-
       <section className="section" id="experience" aria-labelledby="experience-heading">
         <div className="section-label">
-          <span>03</span>
           <h2 id="experience-heading">Experience</h2>
         </div>
         <div className="section-content timeline">
@@ -103,6 +66,7 @@ export default function HomePage() {
                   {item.url ? <ArrowLink href={item.url}>{item.organization}</ArrowLink> : item.organization}
                 </p>
                 <p>{item.description}</p>
+                <WorkDetails name={item.organization} items={item.details} />
               </div>
             </article>
           ))}
@@ -110,10 +74,35 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section" aria-labelledby="work-heading">
+        <div className="section-label">
+          <h2 id="work-heading">Selected work</h2>
+        </div>
+        <div className="section-content item-list">
+          {projects.map((project) => (
+            <article className="project-item" key={project.name}>
+              <div>
+                <h3><ArrowLink href={project.url}>{project.name}</ArrowLink></h3>
+                {project.secondaryLink ? (
+                  <> · <ArrowLink href={project.secondaryLink.url}>{project.secondaryLink.label}</ArrowLink></>
+                ) : null}
+                <span className="item-meta">{project.meta}</span>
+              </div>
+              <div>
+                <p>{project.description}</p>
+                <WorkDetails name={project.name} items={project.details} />
+              </div>
+            </article>
+          ))}
+          <p className="section-more">
+            <a href="/projects/" className="text-link">View more projects →</a>
+          </p>
+        </div>
+      </section>
+
       <section className="section" aria-labelledby="skills-heading">
         <div className="section-label">
-          <span>04</span>
-          <h2 id="skills-heading">Technical range</h2>
+          <h2 id="skills-heading">Skills & tools</h2>
         </div>
         <div className="section-content skill-list">
           {skillGroups.map((group) => (
@@ -127,7 +116,6 @@ export default function HomePage() {
 
       <section className="section" aria-labelledby="research-heading">
         <div className="section-label">
-          <span>05</span>
           <h2 id="research-heading">Research & education</h2>
         </div>
         <div className="section-content timeline">
@@ -160,16 +148,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="writing-heading">
+      <section className="section" id="writing" aria-labelledby="writing-heading">
         <div className="section-label">
-          <span>06</span>
-          <h2 id="writing-heading">Writing</h2>
+          <h2 id="writing-heading">Blog</h2>
         </div>
         <div className="section-content">
           <ul className="writing-list">
             {writing.map((post) => (
               <li key={post.title}>
-                <time>{post.date}</time>
+                <span className="post-topic">{post.topic}</span>
                 <ArrowLink href={post.url}>{post.title}</ArrowLink>
               </li>
             ))}
@@ -179,8 +166,8 @@ export default function HomePage() {
       </section>
 
       <footer className="footer">
-        <p>Open to ambitious product, engineering, research, and graduate-study opportunities.</p>
-        <p><a className="text-link" href={links.email}>info@parajulisudip.com.np</a></p>
+        <p>You can find me on GitHub or get in touch by email.</p>
+        <p><a className="text-link" href={links.email}>coc42060@gmail.com</a></p>
       </footer>
     </main>
   )

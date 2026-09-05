@@ -32,7 +32,7 @@ export function createFileSystem(): FileSystem {
                 "about.txt": {
                   name: "about.txt",
                   type: "file",
-                  content: `Hi, I'm Sudip Parajuli from Dharan, Nepal.
+                  content: `Hi, I'm Sudip Parajuli from Kathmandu, Nepal.
 I work on Data Science, Web Scraping, Robotics, and Web Development using Python and JavaScript.
 I help build human-centric products with positive impact.
 
@@ -56,7 +56,7 @@ BeautifulSoup, Scrapy, Selenium, Requests`,
                 "contact.txt": {
                   name: "contact.txt",
                   type: "file",
-                  content: `Email: info@parajulisudip.com.np
+                  content: `Email: coc42060@gmail.com
 GitHub: https://github.com/sudipnext
 LinkedIn: https://linkedin.com/in/sudipnext
 Twitter: https://twitter.com/sudipnext`,
@@ -227,7 +227,7 @@ print(f"Accuracy: {accuracy:.2f}")
                   content: `{
   "name": "Sudip Parajuli",
   "title": "Full Stack Software Engineer",
-  "location": "Dharan, Nepal",
+  "location": "Kathmandu, Nepal",
   "email": "coc42060@gmail.com",
   "phone": "(+977) 9811359372",
   "website": "parajulisudip.com.np",

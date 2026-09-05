@@ -1,13 +1,17 @@
+import { StructuredData } from "@/components/structured-data"
+import { pageMetadata, profilePageSchema } from "@/lib/seo"
 import { experience, links, projects, skillGroups } from "@/config/portfolio"
 
-export const metadata = {
-  title: "CV",
-  description: "Experience, education, research, projects, and technical background of Sudip Parajuli.",
-}
+export const metadata = pageMetadata(
+  "CV & Experience | Sudip Parajuli (sudipnext)",
+  "Experience, education, and skills of Sudip Parajuli (sudipnext), Software Engineer & Open Source Lead at Presenton, based in Kathmandu, Nepal.",
+  "/cv/",
+)
 
 export default function CVPage() {
   return (
     <main className="page-shell">
+      <StructuredData data={profilePageSchema("/cv/", "CV of Sudip Parajuli (sudipnext)")} />
       <header className="site-header">
         <a href="/" className="site-name">Sudip Parajuli</a>
         <nav aria-label="Primary navigation">
@@ -18,44 +22,44 @@ export default function CVPage() {
 
       <div className="subpage-intro cv-intro">
         <p className="eyebrow">Curriculum vitae</p>
-        <h1>Software Engineer</h1>
+        <h1>Sudip Parajuli</h1>
+        <p className="organization">Also known online as <a className="text-link" href={links.github} target="_blank" rel="noreferrer">sudipnext ↗</a></p>
         <p className="lead-small">
-          Product-minded engineer with experience across open-source AI systems,
-          backend architecture, full-stack applications, applied machine learning,
-          cloud infrastructure, and robotics.
+          Software Engineer &amp; Open Source Lead at Presenton, based in Kathmandu, Nepal.
+          I work on open-source software, enterprise features, infrastructure, and desktop applications.
         </p>
         <div className="contact-line">
-          <span>Dharan, Nepal</span>
-          <a className="text-link" href={links.email}>info@parajulisudip.com.np</a>
+          <span>Kathmandu, Nepal</span>
+          <a className="text-link" href={links.email}>coc42060@gmail.com</a>
           <a className="text-link" href={links.github} target="_blank" rel="noreferrer">GitHub ↗</a>
           <a className="text-link" href={links.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
           <a className="text-link" href={links.scholar} target="_blank" rel="noreferrer">Google Scholar ↗</a>
+          <a className="text-link" href={links.youtube} target="_blank" rel="noreferrer">YouTube ↗</a>
         </div>
       </div>
 
       <section className="section" aria-labelledby="summary-heading">
         <div className="section-label">
-          <span>01</span>
           <h2 id="summary-heading">Profile</h2>
         </div>
         <div className="section-content prose-block">
           <p>
-            I take products from ambiguous requirements to working systems. My recent
-            work centers on AI-assisted document creation and model-agnostic agent
-            workflows; my earlier work includes travel infrastructure, recommendation
-            systems, payments, data pipelines, and cloud deployment.
+            At Presenton, I develop features, review pull requests, and maintain the
+            product and infrastructure. Previously, I worked at Exploreden,
+            building hotel-booking features, provider integrations, Stripe payments,
+            recommendation systems, and data pipelines.
           </p>
           <p>
-            My engineering background also crosses into electronics and autonomous
-            robotics. Alongside professional work, I have led technical communities,
-            mentored AI learners, organized national hackathons, and published with IEEE.
+            I studied electronics, communication, and information engineering, and
+            worked on an autonomous robot as part of my research. Outside work,
+            I’ve helped with student communities, taught AI classes, and helped
+            organize workshops and hackathons.
           </p>
         </div>
       </section>
 
       <section className="section" aria-labelledby="experience-heading">
         <div className="section-label">
-          <span>02</span>
           <h2 id="experience-heading">Experience</h2>
         </div>
         <div className="section-content timeline">
@@ -72,6 +76,11 @@ export default function CVPage() {
                   ) : item.organization}
                 </p>
                 <p>{item.description}</p>
+                {item.details?.length ? (
+                  <ul className="contribution-list">
+                    {item.details.map((detail) => <li key={detail}>{detail}</li>)}
+                  </ul>
+                ) : null}
               </div>
             </article>
           ))}
@@ -80,7 +89,6 @@ export default function CVPage() {
 
       <section className="section" aria-labelledby="education-heading">
         <div className="section-label">
-          <span>03</span>
           <h2 id="education-heading">Education & research</h2>
         </div>
         <div className="section-content timeline">
@@ -115,7 +123,6 @@ export default function CVPage() {
 
       <section className="section" aria-labelledby="skills-heading">
         <div className="section-label">
-          <span>04</span>
           <h2 id="skills-heading">Technical skills</h2>
         </div>
         <div className="section-content skill-list">
@@ -130,7 +137,6 @@ export default function CVPage() {
 
       <section className="section" aria-labelledby="projects-heading">
         <div className="section-label">
-          <span>05</span>
           <h2 id="projects-heading">Selected projects</h2>
         </div>
         <div className="section-content compact-projects">
@@ -156,7 +162,6 @@ export default function CVPage() {
 
       <section className="section" aria-labelledby="interests-heading">
         <div className="section-label">
-          <span>06</span>
           <h2 id="interests-heading">Interests</h2>
         </div>
         <div className="section-content prose-block">
